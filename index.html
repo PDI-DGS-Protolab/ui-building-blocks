@@ -1,34 +1,49 @@
 <html>
     <head>
         <LINK href="index.css" rel="stylesheet" type="text/css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+        </script>
+        <script type="text/javascript" src="index.js"></script>
 	    <title>Merchant payment page</title>
     </head>
     <body>
 
-	   <form method="POST" class="externalBox"><!--action="https://core.spreedly.com/v1/payment_methods"-->
+	   <form id="paymentForm" method="POST" class="externalBox"><!--action="https://core.spreedly.com/v1/payment_methods"-->
         <fieldset class="internalBox">
             <div class="header">
                 Header
             </div>
             <div class="spaceX">
             </div>
-            <input name="redirect_url" type="hidden" value="http://spreedly.protolab.tefdigital.com/post_register.html" />
-            <input name="environment_key" type="hidden" value="NsuxdyBfUANtKphD87e8UFxjKzn" />
+           <!-- <input name="redirect_url" type="hidden" value="http://spreedly.protolab.tefdigital.com/post_register.html" />
+            <input name="environment_key" type="hidden" value="NsuxdyBfUANtKphD87e8UFxjKzn" />-->
 
             <label for="credit_card_first_name" class="textLabel">First name</label>
             <div class="space025X"></div>
-            <input id="credit_card_first_name" name="credit_card[first_name]" type="text" class="inputBox" />
+            <input id="credit_card_first_name" name="credit_card[first_name]" type="text" class="inputBox"/>
 
-            <div class="errorSpace">
+            <div id="errorSpaceName" class="errorSpace"> 
+                
+            </div> 
 
+            <div id="errorSpaceNameX" class="errorName"> 
+                <p>The entered name contains illegal characters. You can input letters only.</p>
+            </div> 
+            
+            <div id="contextName" class="contextName">
+                    <p>Enter your name as it appears on your card</p>
             </div>
 
             <label for="credit_card_last_name" class="textLabel">Last name</label>
             <div class="space025X"></div>
             <input id="credit_card_last_name" name="credit_card[last_name]" type="text" class="inputBox" />
 
-            <div class="errorSpace">
+            <div id="errorSpaceLName" class="errorSpace">
 
+            </div>
+
+            <div id="contextLName" class="contextName">
+                    <p>Enter your last name as it appears on your card</p>
             </div>
 
             <div class="targetSpace">
@@ -43,9 +58,18 @@
             <input autocomplete="off" id="credit_card_number" name="credit_card[number]" type="text" class="cardNumberBox" />
             <input autocomplete="off" id="credit_card_verification_value" name="credit_card[verification_value]" type="text" class="securityCodeBox" />
             
-            <div class="errorSpace">
+            <div id="errorSpaceCC" class="errorSpace">
 
             </div>
+            <div id="contextCC" class="contextName">
+                    <p>Enter your credit card number without any spaces</p>
+            </div>
+
+             <div id="contextCVC" class="contextNameR">
+                    <p>3 digit #</p>
+            </div>
+
+
 
             <label for="credit_card_month" class="textLabel">Expiration Date</label>
             <div class="space025X"></div>
