@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <LINK href="index.css" rel="stylesheet" type="text/css">
+	    <title>Merchant payment page</title>
+    </head>
+    <body>
+
+	   <form method="POST" class="externalBox"><!--action="https://core.spreedly.com/v1/payment_methods"-->
+        <fieldset class="internalBox">
+            <div class="header">
+                Header
+            </div>
+            <div class="spaceX">
+            </div>
+            <input name="redirect_url" type="hidden" value="http://spreedly.protolab.tefdigital.com/post_register.html" />
+            <input name="environment_key" type="hidden" value="NsuxdyBfUANtKphD87e8UFxjKzn" />
+
+            <label for="credit_card_first_name" class="textLabel">First name</label>
+            <div class="space025X"></div>
+            <input id="credit_card_first_name" name="credit_card[first_name]" type="text" class="inputBox" />
+
+            <div class="errorSpace">
+
+            </div>
+
+            <label for="credit_card_last_name" class="textLabel">Last name</label>
+            <div class="space025X"></div>
+            <input id="credit_card_last_name" name="credit_card[last_name]" type="text" class="inputBox" />
+
+            <div class="errorSpace">
+
+            </div>
+
+            <div class="targetSpace">
+                <img src="http://www.tarjetabancaria.es/wp-content/uploads/2009/10/mastercard.jpg" class="targetSpace"/>
+            </div>
+            <div class="space025X"></div>
+
+            <label for="credit_card_number" class="textLabel">Credit Card Number</label>
+            <label for="credit_card_verification_value" class="textLabel right" >CVC Code</label>
+
+            <div class="space025X"></div>
+            <input autocomplete="off" id="credit_card_number" name="credit_card[number]" type="text" class="cardNumberBox" />
+            <input autocomplete="off" id="credit_card_verification_value" name="credit_card[verification_value]" type="text" class="securityCodeBox" />
+            
+            <div class="errorSpace">
+
+            </div>
+
+            <label for="credit_card_month" class="textLabel">Expiration Date</label>
+            <div class="space025X"></div>
+            <select id="credit_card_month" name="credit_card[month]" class="dateDropDown">
+                <option>--</option>
+                <option value=12>12</option>
+                <option value=11>11</option>
+            </select>
+
+            <select id="credit_card_year" name="credit_card[year]" class="dateDropDown">
+                <option>--</option>
+                <option value=2008>2008</option>
+                <option value=2007>2007</option>
+            </select>
+
+            <div class="space175X"></div>
+
+            <button type='submit' class="submitButton">Submit Payment</button>
+        </fieldset>
+        </form>
+    </body>
+</html>
+
