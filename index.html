@@ -76,6 +76,48 @@
 
 
 
+         <!-- Error messages -->
+
+            <div id="errorSpaceCCX1" class="errorName">
+                    <p>The entered CC number has illegal characters. You can input digits only.</p>
+            </div>
+
+            <div id="errorSpaceCCX2" class="errorName">
+                    <p>The entered CC number has a wrong length. You should input 16 digits.</p>
+            </div>
+
+            <div id="errorSpaceCVCX1" class="errorName">
+                    <p>The entered CVC number has illegal characters. You can input digits only.</p>
+            </div>
+
+            <div id="errorSpaceCVCX2" class="errorName">
+                    <p>The entered CVC number has a wrong length. You should input 3 digits.</p>
+            </div>
+
+
+
+            <div id="errorSpaceCCX1CVCX1" class="errorName">
+                    <p>The entered CC and CVC numbers have illegal characters. You can input digits only.</p>
+            </div>
+
+            <div id="errorSpaceCCX2CVCX1" class="errorName">
+                    <p>The entered CC number has a wrong length and the entered CVC number has illegal characters. </p>
+            </div>
+
+            <div id="errorSpaceCCX2CVCX2" class="errorName">
+                    <p>The entered CC and CVC numbers have wrong lengths. CC number has 16 digits and CVC code 3 digits.</p>
+            </div>
+
+            <div id="errorSpaceCCX1CVCX2" class="errorName">
+                    <p>The entered CC number has illegal characters and the entered CVC number has a wrong length.</p>
+            </div>
+
+
+
+
+
+
+
             <label for="credit_card_month" class="textLabel">Expiration Date</label>
             <div class="space025X"></div>
             <select  id="credit_card_month" name="credit_card[month]" class="dateDropDown"  />
@@ -97,10 +139,16 @@
             <select id="credit_card_year" name="credit_card[year]" class="dateDropDown">
             </select>
 
-            <div class="space175X"></div>
+            <div id= "expirationSpace" class="space175X"></div>
 
-            <div id="errorDateM" class="contextName">
-                <p>You cannot choose this month for this year!</p>
+            <div id="errorDateM" class="errorName">
+                <p>Your card has expired or you have chosen a wrong expiration date.</p>
+            </div>
+            <div id="errorDateEmptyM" class="contextName">
+                <p>Please select a month.</p>
+            </div>
+            <div id="errorDateEmptyY" class="contextName">
+                <p>Please select a year.</p>
             </div>
 
 
