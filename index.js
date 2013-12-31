@@ -18,6 +18,17 @@ $(document).ready(function() {
        //check date year
    }); 
 
+    $('#helpLabel').mouseover(function() {
+//TODO
+       //display help
+       $("#helpCVC").show();
+   }); 
+    $('#helpLabel').mouseleave(function() {
+//TODO
+       //display help
+       $("#helpCVC").hide();
+   }); 
+
 //First Name Context + Validation
    $('#credit_card_first_name').click(function() {
       $("#errorSpaceName").hide();
@@ -179,7 +190,7 @@ $(document).ready(function() {
 
       }
 
-//TODO
+
       else if(str.length==0){
         if(($("#errorSpaceCVCX1").is(":visible"))
         ||($("#errorSpaceCVCX2").is(":visible"))
@@ -215,7 +226,7 @@ $(document).ready(function() {
           $(this).css({'border':'#999999 1px solid'});
         }
       }
-//TODO
+
       else{
         if(($("#errorSpaceCVCX1").is(":visible"))
         ||($("#errorSpaceCVCX2").is(":visible"))
@@ -359,7 +370,7 @@ $(document).ready(function() {
         }
       }
 
-//TODO
+
       else if(str.length==0){
         // if(($("#errorSpaceCCX1").is(":visible"))
         // ||($("#errorSpaceCCX2").is(":visible"))
@@ -409,7 +420,7 @@ $(document).ready(function() {
           $(this).css({'border':'#999999 1px solid'});
         }
       }
-//TODO
+
       else{
         // if(($("#errorSpaceCCX1").is(":visible"))
         // ||($("#errorSpaceCCX2").is(":visible"))
