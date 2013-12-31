@@ -1,14 +1,12 @@
 $(document).ready(function() {
-   // $('.submitButton').mouseenter(function() {
-   //     $(this).animate({
-   //         height: '+=10px'
-   //     });
-   // });
-   // $('.submitButton').mouseleave(function() {
-   //     $(this).animate({
-   //         height: '-=10px'
-   //     }); 
-   // });
+
+  var year=new Date().getFullYear();
+  $('#credit_card_year').append($('<option />').val("--").html("--"));
+  for (i = 0; i < 10; i++){
+
+    $('#credit_card_year').append($('<option />').val(year+i).html(year+i));
+  }
+
 
    $('.submitButton').click(function() {
        //check first name
@@ -16,8 +14,6 @@ $(document).ready(function() {
        //check card number
        //check cvc
        //check date
-
-
    }); 
 
 //First Name Context + Validation
@@ -53,20 +49,29 @@ $(document).ready(function() {
 //Last Name Context + Validation
    $('#credit_card_last_name').click(function() {
       $("#errorSpaceLName").hide();
+      $("#errorSpaceLNameX").hide();
       $("#contextLName").show();
+      $(this).css({'border':'#999999 1px solid'})
    }); 
 
    $('#credit_card_last_name').blur(function() {
-      $("#errorSpaceLName").show();
+      
       $("#contextLName").hide();
+      $("#errorSpaceLName").hide();
+      $("#errorSpaceLNameX").hide();
 
       var str = $('#credit_card_last_name').val();
       if(/^[a-zA-Z]*$/.test(str) == false) {
-
-        //display error
+        $(this).css({'border':'red 3px solid'})
+        $("#errorSpaceLNameX").show();
+      }
+      else if((str=='')||(str==undefined)){
+        $("#errorSpaceLName").show();
+        $(this).css({'border':'#999999 1px solid'})
       }
       else{
-        //mark green
+        $("#errorSpaceLName").show();
+        $(this).css({'border':'green 3px solid'});
       }
    }); 
 
@@ -113,5 +118,16 @@ $(document).ready(function() {
       }
    }); 
 
+//date
+   $('#credit_card_year').click(function() {
+      var d=new Date();
+      var y=d.getFullYear();
+      var m=d.getMonth()+1;
+
+
+   });  
+
 
 });
+
+

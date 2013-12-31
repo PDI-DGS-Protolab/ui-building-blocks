@@ -13,6 +13,7 @@
             <div class="header">
                 Header
             </div>
+            
             <div class="spaceX">
             </div>
            <!-- <input name="redirect_url" type="hidden" value="http://spreedly.protolab.tefdigital.com/post_register.html" />
@@ -41,6 +42,10 @@
             <div id="errorSpaceLName" class="errorSpace">
 
             </div>
+
+            <div id="errorSpaceLNameX" class="errorName"> 
+                <p>The entered name contains illegal characters. You can input letters only.</p>
+            </div> 
 
             <div id="contextLName" class="contextName">
                     <p>Enter your last name as it appears on your card</p>
@@ -73,19 +78,31 @@
 
             <label for="credit_card_month" class="textLabel">Expiration Date</label>
             <div class="space025X"></div>
-            <select id="credit_card_month" name="credit_card[month]" class="dateDropDown">
+            <select  id="credit_card_month" name="credit_card[month]" class="dateDropDown"  />
                 <option>--</option>
-                <option value=12>12</option>
-                <option value=11>11</option>
-            </select>
+                <option value=1>1-Jan</option>
+                <option value=2>2-Feb</option> 
+                <option value=3>3-Mar</option>
+                <option value=4>4-Apr</option>
+                <option value=5>5-May</option> 
+                <option value=6>6-Jun</option>
+                <option value=7>7-Jul</option> 
+                <option value=8>8-Aug</option>
+                <option value=9>9-Sep</option>
+                <option value=10>10-Oct</option>
+                <option value=11>11-Nov</option>
+                <option value=12>12-Dec</option>
+            </select> 
 
             <select id="credit_card_year" name="credit_card[year]" class="dateDropDown">
-                <option>--</option>
-                <option value=2008>2008</option>
-                <option value=2007>2007</option>
             </select>
 
             <div class="space175X"></div>
+
+            <div id="errorDateM" class="contextName">
+                <p>You cannot choose this month for this year!</p>
+            </div>
+
 
             <button type='submit' class="submitButton">Submit Payment</button>
         </fieldset>
