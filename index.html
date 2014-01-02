@@ -1,6 +1,7 @@
 <html>
     <head>
         <LINK href="index.css" rel="stylesheet" type="text/css">
+        <LINK href="telefonica.css" rel="stylesheet" type="text/css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
         </script>
         <script type="text/javascript" src="index.js"></script>
@@ -23,28 +24,28 @@
             <div class="space025X"></div>
             <input id="credit_card_first_name" name="credit_card[first_name]" type="text" class="inputBox"/>
 
-            <div id="errorSpaceName" class="errorSpace"> 
+            <div id="errorSpaceName" class="infoSpace"> 
                 
             </div> 
 
-            <div id="errorSpaceNameX" class="errorName"> 
-                <p>The entered name contains illegal characters. You can input letters only.</p>
+            <div id="errorSpaceNameX" class="checkSpace"> 
+                <div id="checkBoxName" class="checkBox">
+
+                </div>
             </div> 
-            
-            <div id="contextName" class="contextName">
-                    <p>Enter your name as it appears on your card</p>
-            </div>
 
             <label for="credit_card_last_name" class="textLabel">Last name</label>
             <div class="space025X"></div>
             <input id="credit_card_last_name" name="credit_card[last_name]" type="text" class="inputBox" />
 
-            <div id="errorSpaceLName" class="errorSpace">
+            <div id="errorSpaceLName" class="infoSpace">
 
             </div>
 
-            <div id="errorSpaceLNameX" class="errorName"> 
-                <p>The entered name contains illegal characters. You can input letters only.</p>
+            <div id="errorSpaceLNameX" class="checkSpace"> 
+                <div id="checkBoxLName" class="checkBox">
+
+                </div>
             </div> 
 
             <div id="contextLName" class="contextName">
@@ -52,16 +53,21 @@
             </div>
 
             <div class="targetSpace">
-                <img src="http://www.tarjetabancaria.es/wp-content/uploads/2009/10/mastercard.jpg" class="targetSpace"/>
+                <div class="american">
+                </div>
+                <div class="maestro">
+                </div>
+                <div class="mastercard">
+                </div>
+                <div class="visa">
+                </div>
             </div>
 
             <div id="helpCVC" class="help">
                     <p>3 digit number on the back of your card</p>
             </div>
 
-            <div id="contextCC" class="contextName">
-                    <p>Enter your credit card number without any spaces</p>
-            </div>
+
             <div class="space025X"></div>
 
             <label for="credit_card_number" class="textLabel">Credit Card Number</label>
@@ -75,7 +81,7 @@
 
         
 
-            <div id="errorSpaceCC" class="errorSpace">
+            <div id="errorSpaceCC" class="infoSpace">
 
             </div>
             <div id="contextCC" class="contextName">
@@ -164,7 +170,7 @@
             </div>
 
 
-            <button type='submit' class="submitButton">Submit Payment</button>
+            <button type='submit' class="submitButton neutralButton" disabled>Submit Payment</button>
         </fieldset>
         </form>
     </body>
