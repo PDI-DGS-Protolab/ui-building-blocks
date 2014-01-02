@@ -77,7 +77,7 @@
 
             <div class="space025X"></div>
             <input autocomplete="off" id="credit_card_number" name="credit_card[number]" type="text" class="cardNumberBox" />
-            <input autocomplete="off" id="credit_card_verification_value" name="credit_card[verification_value]" type="password" class="securityCodeBox" />
+            <input autocomplete="off" id="credit_card_verification_value" name="credit_card[verification_value]" type="password" class="securityCodeBox" maxlength=3/>
 
             <div class="infoLeft">
                 <div id="errorSpaceCC" class="infoSpace"> 
@@ -138,13 +138,10 @@
 
 -->
 
-
-
-
-            <label for="credit_card_month" class="textLabel">Expiration Date</label>
+ <label for="credit_card_month" class="textLabel">Expiration Date</label>
             <div class="space025X"></div>
             <select  id="credit_card_month" name="credit_card[month]" class="dateDropDown"  />
-                <option>--</option>
+<!--                 <option>--</option>
                 <option value=1>1-Jan</option>
                 <option value=2>2-Feb</option> 
                 <option value=3>3-Mar</option>
@@ -156,23 +153,28 @@
                 <option value=9>9-Sep</option>
                 <option value=10>10-Oct</option>
                 <option value=11>11-Nov</option>
-                <option value=12>12-Dec</option>
+                <option value=12>12-Dec</option> -->
             </select> 
 
             <select id="credit_card_year" name="credit_card[year]" class="dateDropDown">
             </select>
 
-            <div id= "expirationSpace" class="space175X"></div>
+            <!-- <div id= "expirationSpace" class="space175X"></div>
 
-            <div id="errorDateM" class="errorName">
-                <p>Your card has expired or you have chosen a wrong expiration date.</p>
+            
+            <div id="errorDateEmpty" class="contextName">
+
+            </div> -->
+
+            <div id="errorDateEmpty" class="infoSpace">
+
             </div>
-            <div id="errorDateEmptyM" class="contextName">
-                <p>Please select a month.</p>
-            </div>
-            <div id="errorDateEmptyY" class="contextName">
-                <p>Please select a year.</p>
-            </div>
+
+            <div id="errorDate" class="checkSpace"> 
+                <div id="checkBoxDate" class="checkBox">
+
+                </div>
+            </div> 
 
 
             <button type='submit' class="submitButton neutralButton" disabled>Submit Payment</button>
