@@ -31,7 +31,6 @@ $(document).ready(function() {
 
 //First Name Context + Validation
    $('#credit_card_first_name').click(function() {
-      $(".american").addClass("innactive");
       $("#errorSpaceName").show();
       $("#errorSpaceName").text("Enter your name as it appears on your card");
       $("#errorSpaceNameX").hide();
@@ -112,172 +111,59 @@ $(document).ready(function() {
 
 //Credit Card Context + Validation
    $('#credit_card_number').click(function() {
+      $("#errorSpaceCC").show();
       $("#errorSpaceCC").text("Enter your credit card number without any spaces");
-      $("#errorSpaceCCX1").hide();
-      $("#errorSpaceCCX2").hide();
-      $("#contextCVC").hide();
-
-      if(($("#errorSpaceCVCX1").is(":visible"))
-        ||($("#errorSpaceCVCX2").is(":visible"))
-        ||($("#errorSpaceCCX1CVCX2").is(":visible"))
-        ||($("#errorSpaceCCX1CVCX1").is(":visible"))
-        ||($("#errorSpaceCCX2CVCX2").is(":visible"))
-        ||($("#errorSpaceCCX2CVCX1").is(":visible"))
-        ){
-      }
-      else{
-        //$("#contextCC").show();
-      }
-
+      $("#checkBoxCC").hide();
    }); 
 
 
 
    $('#credit_card_number').blur(function() {
       $("#errorSpaceCC").text("");
-      $("#errorSpaceCCX1").hide();
-      $("#errorSpaceCCX2").hide();
-      $("#contextCVC").hide();
-      $("#contextCC").hide();
+      $("#errorSpaceCC").hide();
 
       var str = $('#credit_card_number').val();
 
-//illegal characters
-      if(/^[0-9]*$/.test(str) == false) { 
-        if($("#errorSpaceCVCX1").is(":visible")){
-          $("#errorSpaceCVCX1").hide();
-          $("#errorSpaceCCX1CVCX1").show();
-          $(this).css({'border':'red 3px solid'});
-        }
-        else if($("#errorSpaceCVCX2").is(":visible")){
-          $("#errorSpaceCVCX2").hide();
-          $("#errorSpaceCCX1CVCX2").show();
-          $(this).css({'border':'red 3px solid'});
-        }
-        else if($("#errorSpaceCCX2CVCX2").is(":visible")){
-          $("#errorSpaceCCX2CVCX2").hide();
-          $("#errorSpaceCCX1CVCX2").show();
-          $(this).css({'border':'red 3px solid'});
-        }
-        else if($("#errorSpaceCCX2CVCX1").is(":visible")){
-          $("#errorSpaceCCX2CVCX1").hide();
-          $("#errorSpaceCCX1CVCX1").show();
-          $(this).css({'border':'red 3px solid'});
-        }
-        else if($("#errorSpaceCCX1CVCX1").is(":visible")
-              ||$("#errorSpaceCCX1CVCX2").is(":visible")){
-          $(this).css({'border':'red 3px solid'});
-        }
-        else{
-          $(this).css({'border':'red 3px solid'})
-          $("#errorSpaceCCX1").show();
-        }
-      }
 
-//wrong length
-      else if((str.length!=0)&&(str.length!=16)){
-        if($("#errorSpaceCVCX1").is(":visible")){
-          $("#errorSpaceCVCX1").hide();
-          $("#errorSpaceCCX2CVCX1").show();
-          $(this).css({'border':'red 3px solid'});
-        }
-        else if($("#errorSpaceCVCX2").is(":visible")){
-          $("#errorSpaceCVCX2").hide();
-          $("#errorSpaceCCX2CVCX2").show();
-          $(this).css({'border':'red 3px solid'});
-        }
-        else if($("#errorSpaceCCX1CVCX2").is(":visible")){
-          $("#errorSpaceCCX1CVCX2").hide();
-          $("#errorSpaceCCX2CVCX2").show();
-          $(this).css({'border':'red 3px solid'});
-        }
-        else if($("#errorSpaceCCX1CVCX1").is(":visible")){
-          $("#errorSpaceCCX1CVCX1").hide();
-          $("#errorSpaceCCX2CVCX1").show();
-          $(this).css({'border':'red 3px solid'});
-        }
-        else if($("#errorSpaceCCX2CVCX1").is(":visible")
-              ||$("#errorSpaceCCX2CVCX2").is(":visible")){
-          $(this).css({'border':'red 3px solid'});
-        }
-        else{
-          $(this).css({'border':'red 3px solid'});
-          $("#errorSpaceCCX2").show();
-        }
-
+      if(/^[0-9]*$/.test(str) == false) { //characters
+        $("#errorSpaceCC").hide();
+        $("#checkBoxCC").show();
+        $(this).removeClass("positiveBox");
+        $(this).addClass("negativeBox");
+        $("#checkBoxCC").text("Illegal characters");
+        $("#checkBoxCC").removeClass("positiveCheck");
+        $("#checkBoxCC").addClass("negativeCheck");
       }
 
 
-      else if(str.length==0){
-        if(($("#errorSpaceCVCX1").is(":visible"))
-        ||($("#errorSpaceCVCX2").is(":visible"))
-        // ||($("#errorSpaceCCX1CVCX2").is(":visible"))
-        // ||($("#errorSpaceCCX1CVCX1").is(":visible"))
-        // ||($("#errorSpaceCCX2CVCX2").is(":visible"))
-        // ||($("#errorSpaceCCX2CVCX1").is(":visible"))
-        ){
-          $(this).css({'border':'#999999 1px solid'});
-        }
-        else if($("#errorSpaceCCX1CVCX2").is(":visible")){
-          $("#errorSpaceCCX1CVCX2").hide();
-          $("#errorSpaceCVCX2").show();
-          $(this).css({'border':'#999999 1px solid'});
-        }
-        else if($("#errorSpaceCCX1CVCX1").is(":visible")){
-          $("#errorSpaceCCX1CVCX1").hide();
-          $("#errorSpaceCVCX1").show();
-          $(this).css({'border':'#999999 1px solid'});
-        }
-        else if($("#errorSpaceCCX2CVCX2").is(":visible")){
-          $("#errorSpaceCCX2CVCX2").hide();
-          $("#errorSpaceCVCX2").show();
-          $(this).css({'border':'#999999 1px solid'});
-        }
-        else if($("#errorSpaceCCX2CVCX1").is(":visible")){
-          $("#errorSpaceCCX2CVCX1").hide();
-          $("#errorSpaceCVCX1").show();
-          $(this).css({'border':'#999999 1px solid'});
-        }
-        else{
-          $("#errorSpaceCC").show();
-          $(this).css({'border':'#999999 1px solid'});
-        }
+      else if((str.length!=0)&&(str.length!=16)){//length
+        $("#errorSpaceCC").hide();
+        $("#checkBoxCC").show();
+        $(this).removeClass("positiveBox");
+        $(this).addClass("negativeBox");
+        $("#checkBoxCC").text("Illegal length");
+        $("#checkBoxCC").removeClass("positiveCheck");
+        $("#checkBoxCC").addClass("negativeCheck");
       }
 
-      else{
-        if(($("#errorSpaceCVCX1").is(":visible"))
-        ||($("#errorSpaceCVCX2").is(":visible"))
-        // ||($("#errorSpaceCCX1CVCX2").is(":visible"))
-        // ||($("#errorSpaceCCX1CVCX1").is(":visible"))
-        // ||($("#errorSpaceCCX2CVCX2").is(":visible"))
-        // ||($("#errorSpaceCCX2CVCX1").is(":visible"))
-        ){
-          $(this).css({'border':'green 1px solid'});
-        }
-        else if($("#errorSpaceCCX1CVCX2").is(":visible")){
-          $("#errorSpaceCCX1CVCX2").hide();
-          $("#errorSpaceCVCX2").show();
-          $(this).css({'border':'green 3px solid'});
-        }
-        else if($("#errorSpaceCCX1CVCX1").is(":visible")){
-          $("#errorSpaceCCX1CVCX1").hide();
-          $("#errorSpaceCVCX1").show();
-          $(this).css({'border':'green 3px solid'});
-        }
-        else if($("#errorSpaceCCX2CVCX2").is(":visible")){
-          $("#errorSpaceCCX2CVCX2").hide();
-          $("#errorSpaceCVCX2").show();
-          $(this).css({'border':'green 3px solid'});
-        }
-        else if($("#errorSpaceCCX2CVCX1").is(":visible")){
-          $("#errorSpaceCCX2CVCX1").hide();
-          $("#errorSpaceCVCX1").show();
-          $(this).css({'border':'green 3px solid'});
-        }
-        else{
-          $("#errorSpaceCC").show();
-          $(this).css({'border':'green 3px solid'});
-        }
+
+      else if(str.length==0){//empty
+        $("#checkBoxCC").hide();
+        $("#errorSpaceCC").show();
+        $(this).removeClass("negativeBox");
+        $(this).removeClass("positiveBox");
+        $("#checkBoxCC").removeClass("negativeCheck");
+        $("#checkBoxCC").removeClass("positiveCheck");
+      }
+
+      else{//ok
+        $("#errorSpaceCC").hide();
+        $("#checkBoxCC").show();
+        $(this).removeClass("negativeBox");
+        $(this).addClass("positiveBox");
+        $("#checkBoxCC").text("Ok");
+        $("#checkBoxCC").removeClass("negativeCheck");
+        $("#checkBoxCC").addClass("positiveCheck");
       }
 
    });
@@ -285,206 +171,51 @@ $(document).ready(function() {
 
 //CVC Context + Validation
    $('#credit_card_verification_value').click(function() {
-      $("#errorSpaceCC").text("3 digit #");
-      $("#errorSpaceCVCX1").hide();
-      $("#errorSpaceCVCX2").hide();
-      $("#contextCC").hide();
-      if(($("#errorSpaceCCX1").is(":visible"))
-        ||($("#errorSpaceCCX2").is(":visible"))
-        ||($("#errorSpaceCCX1CVCX2").is(":visible"))
-        ||($("#errorSpaceCCX1CVCX1").is(":visible"))
-        ||($("#errorSpaceCCX2CVCX2").is(":visible"))
-        ||($("#errorSpaceCCX2CVCX1").is(":visible"))
-        ){
-          $(this).css({'border':'#999999 1px solid'});
-        }
-      else{
-        //$("#contextCVC").show();
-        $(this).css({'border':'#999999 1px solid'});
-      }
+      $("#errorSpaceCVC").show();
+      $("#errorSpaceCVC").text("3 digit #");
+      $("#checkBoxCVC").hide();
+      
 
    });  
 
 
 
    $('#credit_card_verification_value').blur(function() {
-      $("#errorSpaceCC").text("");
-      $("#errorSpaceCVCX1").hide();
-      $("#errorSpaceCVCX2").hide();
-      $("#contextCC").hide();
-      $("#contextCVC").hide();
+      $("#errorSpaceCVC").text("");
+
+      $("#errorSpaceCVC").hide();
 
       var str = $('#credit_card_verification_value').val();
 
 
-//illegal characters
-      if(/^[0-9]*$/.test(str) == false) {
-
-        if($("#errorSpaceCCX1").is(":visible")){
-          $("#errorSpaceCCX1").hide();
-          $("#errorSpaceCCX1CVCX1").show();
-          $(this).css({'border':'red 3px solid'});
-        }
-
-        else if($("#errorSpaceCCX2").is(":visible")){
-          $("#errorSpaceCCX2").hide();
-          $("#errorSpaceCCX2CVCX1").show();
-          $(this).css({'border':'red 3px solid'});
-        }
-
-        else if($("#errorSpaceCCX1CVCX2").is(":visible")){
-          $("#errorSpaceCCX1CVCX2").hide();
-          $("#errorSpaceCCX1CVCX1").show();
-          $(this).css({'border':'red 3px solid'});
-        }
-        else if($("#errorSpaceCCX2CVCX2").is(":visible")){
-          $("#errorSpaceCCX2CVCX2").hide();
-          $("#errorSpaceCCX2CVCX1").show();
-          $(this).css({'border':'red 3px solid'});
-        }
-        else if($("#errorSpaceCCX1CVCX1").is(":visible")
-              ||$("#errorSpaceCCX2CVCX1").is(":visible")){
-          $(this).css({'border':'red 3px solid'});
-        }
-        else{
-          $(this).css({'border':'red 3px solid'})
-          $("#errorSpaceCVCX1").show();
-        }
-
-      }
-
-//wrong length
-      else if((str.length!=0)&&(str.length!=3)){
-        if($("#errorSpaceCCX1").is(":visible")){
-          $("#errorSpaceCCX1").hide();
-          $("#errorSpaceCCX1CVCX2").show();
-          $(this).css({'border':'red 3px solid'});
-        }
-
-        else if($("#errorSpaceCCX2").is(":visible")){
-          $("#errorSpaceCCX2").hide();
-          $("#errorSpaceCCX2CVCX2").show();
-          $(this).css({'border':'red 3px solid'});
-        }
-
-        else if($("#errorSpaceCCX1CVCX1").is(":visible")){
-          $("#errorSpaceCCX1CVCX1").hide();
-          $("#errorSpaceCCX1CVCX2").show();
-          $(this).css({'border':'red 3px solid'});
-        }
-        else if($("#errorSpaceCCX2CVCX1").is(":visible")){
-          $("#errorSpaceCCX2CVCX1").hide();
-          $("#errorSpaceCCX2CVCX2").show();
-          $(this).css({'border':'red 3px solid'});
-        }
-        else if($("#errorSpaceCCX1CVCX2").is(":visible")
-              ||$("#errorSpaceCCX2CVCX2").is(":visible")){
-          $(this).css({'border':'red 3px solid'});
-        }
-        else{
-          $(this).css({'border':'red 3px solid'});
-          $("#errorSpaceCVCX2").show();
-        }
+      if((/^[0-9]*$/.test(str) == false)|| ((str.length!=0)&&(str.length!=16))) { //characters
+        $("#errorSpaceCVC").hide();
+        $("#checkBoxCVC").show();
+        $(this).removeClass("positiveBox");
+        $(this).addClass("negativeBox");
+        $("#checkBoxCVC").text("Not Valid");
+        $("#checkBoxCVC").removeClass("positiveCheck");
+        $("#checkBoxCVC").addClass("negativeCheck");
       }
 
 
-      else if(str.length==0){
-        // if(($("#errorSpaceCCX1").is(":visible"))
-        // ||($("#errorSpaceCCX2").is(":visible"))
-        // ||($("#errorSpaceCCX1CVCX2").is(":visible"))
-        // ||($("#errorSpaceCCX1CVCX1").is(":visible"))
-        // ||($("#errorSpaceCCX2CVCX2").is(":visible"))
-        // ||($("#errorSpaceCCX2CVCX1").is(":visible"))
-        // ){
-        //   $(this).css({'border':'#999999 1px solid'});
-        // }
-        // else{
-        //   $("#errorSpaceCC").show();
-        //   $(this).css({'border':'#999999 1px solid'});
-        // }
-
-        if(($("#errorSpaceCCX1").is(":visible"))
-        ||($("#errorSpaceCCX2").is(":visible"))
-        // ||($("#errorSpaceCCX1CVCX2").is(":visible"))
-        // ||($("#errorSpaceCCX1CVCX1").is(":visible"))
-        // ||($("#errorSpaceCCX2CVCX2").is(":visible"))
-        // ||($("#errorSpaceCCX2CVCX1").is(":visible"))
-        ){
-          $(this).css({'border':'#999999 1px solid'});
-        }
-        else if($("#errorSpaceCCX1CVCX2").is(":visible")){
-          $("#errorSpaceCCX1CVCX2").hide();
-          $("#errorSpaceCCX1").show();
-          $(this).css({'border':'#999999 1px solid'});
-        }
-        else if($("#errorSpaceCCX1CVCX1").is(":visible")){
-          $("#errorSpaceCCX1CVCX1").hide();
-          $("#errorSpaceCCX1").show();
-          $(this).css({'border':'#999999 1px solid'});
-        }
-        else if($("#errorSpaceCCX2CVCX2").is(":visible")){
-          $("#errorSpaceCCX2CVCX2").hide();
-          $("#errorSpaceCCX2").show();
-          $(this).css({'border':'#999999 1px solid'});
-        }
-        else if($("#errorSpaceCCX2CVCX1").is(":visible")){
-          $("#errorSpaceCCX2CVCX1").hide();
-          $("#errorSpaceCCX2").show();
-          $(this).css({'border':'#999999 1px solid'});
-        }
-        else{
-          $("#errorSpaceCC").show();
-          $(this).css({'border':'#999999 1px solid'});
-        }
+      else if(str.length==0){//empty
+        $("#checkBoxCVC").hide();
+        $("#errorSpaceCVC").show();
+        $(this).removeClass("negativeBox");
+        $(this).removeClass("positiveBox");
+        $("#checkBoxCVC").removeClass("negativeCheck");
+        $("#checkBoxCVC").removeClass("positiveCheck");
       }
 
-      else{
-        // if(($("#errorSpaceCCX1").is(":visible"))
-        // ||($("#errorSpaceCCX2").is(":visible"))
-        // ||($("#errorSpaceCCX1CVCX2").is(":visible"))
-        // ||($("#errorSpaceCCX1CVCX1").is(":visible"))
-        // ||($("#errorSpaceCCX2CVCX2").is(":visible"))
-        // ||($("#errorSpaceCCX2CVCX1").is(":visible"))
-        // ){
-        //   $(this).css({'border':'green 3px solid'});
-        // }
-        // else{
-        //   $("#errorSpaceCC").show();
-        //   $(this).css({'border':'green 3px solid'});
-        // }
-        if(($("#errorSpaceCCX1").is(":visible"))
-        ||($("#errorSpaceCCX2").is(":visible"))
-        // ||($("#errorSpaceCCX1CVCX2").is(":visible"))
-        // ||($("#errorSpaceCCX1CVCX1").is(":visible"))
-        // ||($("#errorSpaceCCX2CVCX2").is(":visible"))
-        // ||($("#errorSpaceCCX2CVCX1").is(":visible"))
-        ){
-          $(this).css({'border':'green 3px solid'});
-        }
-        else if($("#errorSpaceCCX1CVCX2").is(":visible")){
-          $("#errorSpaceCCX1CVCX2").hide();
-          $("#errorSpaceCCX1").show();
-          $(this).css({'border':'green 3px solid'});
-        }
-        else if($("#errorSpaceCCX1CVCX1").is(":visible")){
-          $("#errorSpaceCCX1CVCX1").hide();
-          $("#errorSpaceCCX1").show();
-          $(this).css({'border':'green 3px solid'});
-        }
-        else if($("#errorSpaceCCX2CVCX2").is(":visible")){
-          $("#errorSpaceCCX2CVCX2").hide();
-          $("#errorSpaceCCX2").show();
-          $(this).css({'border':'green 3px solid'});
-        }
-        else if($("#errorSpaceCCX2CVCX1").is(":visible")){
-          $("#errorSpaceCCX2CVCX1").hide();
-          $("#errorSpaceCCX2").show();
-          $(this).css({'border':'green 3px solid'});
-        }
-        else{
-          $("#errorSpaceCC").show();
-          $(this).css({'border':'green 3px solid'});
-        }
+      else{//ok
+        $("#errorSpaceCVC").hide();
+        $("#checkBoxCVC").show();
+        $(this).removeClass("negativeBox");
+        $(this).addClass("positiveBox");
+        $("#checkBoxCVC").text("Ok");
+        $("#checkBoxCVC").removeClass("negativeCheck");
+        $("#checkBoxCVC").addClass("positiveCheck");
       }
    }); 
 

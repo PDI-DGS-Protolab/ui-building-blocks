@@ -1,8 +1,8 @@
 
-.inputBox:focus,.cardNumberBox:focus,.securityCodeBox:focus,.dateDropDown :focus{
+.inputBox:focus,.cardNumberBox:focus,.securityCodeBox:focus,.dateDropDown:focus{
     outline: none !important;
     border-color: #00c6d7;
-    border-width:2px;
+    border-width: 2px;
 }
 
 .negativeBox{

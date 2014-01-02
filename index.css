@@ -32,10 +32,11 @@
     height:42px;
 }
 
-.checkSpace,.targetSpace,.infoSpace{
+.checkSpace,.targetSpace,.infoSpace,.infoSpaceCC,.infoSpaceCVC{
     height:30px;
     font-size:18px;
 }
+
 
 .infoSpace{
     padding:0px 5px 0px 5px;
@@ -43,6 +44,20 @@
     font-size:12px;
     color:#474747;
     vertical-align:middle;
+}
+
+
+.infoLeft{
+    height:30px;
+    width:75%;
+    margin-right:12px;
+    float:left;
+}
+
+.infoRight{
+    height:30px;
+    width:21%;
+    float:right;
 }
 
 .checkSpace{
@@ -54,16 +69,22 @@
     font-weight: bold;
 }
 
-.checkBox{
+.checkBox,.checkBoxCC,.checkBoxCVC{
     margin-top:3.75px;
+    float:left;
     height:22.5px;
+    border-radius:5px;
     line-height:22.5px;
     vertical-align: middle;
-    border-radius:5px;
-    padding:0px 5px 0px 5px;
     background-color:white;
     font-size:12px;
     font-weight:bold;
+    text-indent:5px;
+    width:100%;
+}
+
+.checkBoxCC,.checkBoxCVC{
+    display:none;
 }
 
 .inputBox,.cardNumberBox,.securityCodeBox,.dateDropDown{
