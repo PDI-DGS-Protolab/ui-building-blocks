@@ -90,11 +90,8 @@ $(document).ready(function() {
         $(".maestro").addClass("innactive");
         $(".mastercard").addClass("innactive");
         $(".visa").addClass("innactive");
-        //console.log(str.length);
+
         if(str.length==4){
-            //TODO ERROR message
-            //console.log(str.length);
-            //$('#credit_card_number').addClass("negativeBox");
             $('#credit_card_number').attr('maxlength', 4);
             $('#credit_card_number').blur();
         }
@@ -122,7 +119,7 @@ $(document).ready(function() {
         $("#errorSpaceNameX").show();
         $(this).removeClass("positiveBox");
         $(this).addClass("negativeBox");
-        $("#checkBoxName").text("Illegal characters");
+        $("#checkBoxName").text("Illegal characters. You can input lonly letters.");
         $("#checkBoxName").removeClass("positiveCheck");
         $("#checkBoxName").addClass("negativeCheck");
       }
@@ -136,7 +133,7 @@ $(document).ready(function() {
         $("#errorSpaceNameX").show();
         $(this).removeClass("negativeBox");
         $(this).addClass("positiveBox");
-        $("#checkBoxName").text("Ok");
+        $("#checkBoxName").text("OK!");
         $("#checkBoxName").removeClass("negativeCheck");
         $("#checkBoxName").addClass("positiveCheck");
       }
@@ -174,14 +171,11 @@ $(document).ready(function() {
         $("#errorSpaceLNameX").show();
         $(this).removeClass("negativeBox");
         $(this).addClass("positiveBox");
-        $("#checkBoxLName").text("Ok");
+        $("#checkBoxLName").text("OK!");
         $("#checkBoxLName").removeClass("negativeCheck");
         $("#checkBoxLName").addClass("positiveCheck");
       }
    }); 
-
-
-
 
 //Credit Card Context + Validation
    $('#credit_card_number').click(function() {
@@ -190,17 +184,13 @@ $(document).ready(function() {
       $("#checkBoxCC").hide();
    }); 
 
-
-
    $('#credit_card_number').blur(function() {
       $("#errorSpaceCC").text("");
       $("#errorSpaceCC").hide();
-console.log("in blur...");
+
       var str = $('#credit_card_number').val();
 
-
       if(/^[0-9]*$/.test(str) == false) { 
-      console.log("in blur...1");//characters
         $("#errorSpaceCC").hide();
         $("#checkBoxCC").show();
         $(this).removeClass("positiveBox");
@@ -209,17 +199,6 @@ console.log("in blur...");
         $("#checkBoxCC").removeClass("positiveCheck");
         $("#checkBoxCC").addClass("negativeCheck");
       }
-
-
-      // else if((str.length!=0)&&(str.length!=16)){//length
-        // $("#errorSpaceCC").hide();
-        // $("#checkBoxCC").show();
-        // $(this).removeClass("positiveBox");
-        // $(this).addClass("negativeBox");
-        // $("#checkBoxCC").text("Illegal length");
-        // $("#checkBoxCC").removeClass("positiveCheck");
-        // $("#checkBoxCC").addClass("negativeCheck");
-      // }
 
       else if(str.length==4
         && str.substr(0,1)!='4'
@@ -238,9 +217,6 @@ console.log("in blur...");
         && str.substr(0,4)!='6763'
         && str.substr(0,4)!='0604'
         && str.substr(0,4)!='6390'){
-        console.log("in blur...2");
-
-
           $("#errorSpaceCC").hide();
           $("#checkBoxCC").show();
           $(this).removeClass("positiveBox");
@@ -249,8 +225,8 @@ console.log("in blur...");
           $("#checkBoxCC").removeClass("positiveCheck");
           $("#checkBoxCC").addClass("negativeCheck");
       }
+
       else if(str.length!=0&&str.length<4){
-        console.log("in blur...3");
           $("#errorSpaceCC").hide();
           $("#checkBoxCC").show();
           $(this).removeClass("positiveBox");
@@ -258,10 +234,10 @@ console.log("in blur...");
           $("#checkBoxCC").text("Invalid length.");
           $("#checkBoxCC").removeClass("positiveCheck");
           $("#checkBoxCC").addClass("negativeCheck");
-
       }
+
       else if(str.length==4||str.length>4){
-        console.log("in blur...4");
+
         if(str.substr(0,1)=='4'){
           if(str.length!=13&&str.length!=16){
             $("#errorSpaceCC").hide();
@@ -272,21 +248,20 @@ console.log("in blur...");
             $("#checkBoxCC").removeClass("positiveCheck");
             $("#checkBoxCC").addClass("negativeCheck");
           }
+
           else{
-            console.log("here");
-            console.log("in blur...9");
             $("#errorSpaceCC").hide();
             $("#checkBoxCC").show();
             $(this).removeClass("negativeBox");
             $(this).addClass("positiveBox");
-            $("#checkBoxCC").text("Ok");
+            $("#checkBoxCC").text("OK!");
             $("#checkBoxCC").removeClass("negativeCheck");
             $("#checkBoxCC").addClass("positiveCheck");
           }
         }
+
         else if(str.substr(0,2)=='51'
               ||str.substr(0,2)=='52'){
-          console.log("in blur...5");
           if(str.length!=16){
             $("#errorSpaceCC").hide();
             $("#checkBoxCC").show();
@@ -296,21 +271,20 @@ console.log("in blur...");
             $("#checkBoxCC").removeClass("positiveCheck");
             $("#checkBoxCC").addClass("negativeCheck");
           }
+
           else{
-            console.log("here");
-            console.log("in blur...9");
             $("#errorSpaceCC").hide();
             $("#checkBoxCC").show();
             $(this).removeClass("negativeBox");
             $(this).addClass("positiveBox");
-            $("#checkBoxCC").text("Ok");
+            $("#checkBoxCC").text("OK!");
             $("#checkBoxCC").removeClass("negativeCheck");
             $("#checkBoxCC").addClass("positiveCheck");
           }
         }
+
         else if(str.substr(0,2)=='34'
               ||str.substr(0,2)=='37'){
-          console.log("in blur...6");
           if(str.length!=15){
             $("#errorSpaceCC").hide();
             $("#checkBoxCC").show();
@@ -320,21 +294,20 @@ console.log("in blur...");
             $("#checkBoxCC").removeClass("positiveCheck");
             $("#checkBoxCC").addClass("negativeCheck");
           }
+
           else{
-            console.log("here");
-            console.log("in blur...9");
             $("#errorSpaceCC").hide();
             $("#checkBoxCC").show();
             $(this).removeClass("negativeBox");
             $(this).addClass("positiveBox");
-            $("#checkBoxCC").text("Ok");
+            $("#checkBoxCC").text("OK!");
             $("#checkBoxCC").removeClass("negativeCheck");
             $("#checkBoxCC").addClass("positiveCheck");
           }
         }
+
         else {
           if(str.length<12){
-            console.log("in blur...7");
             $("#errorSpaceCC").hide();
             $("#checkBoxCC").show();
             $(this).removeClass("positiveBox");
@@ -343,14 +316,13 @@ console.log("in blur...");
             $("#checkBoxCC").removeClass("positiveCheck");
             $("#checkBoxCC").addClass("negativeCheck");
           }
+
           else{
-            console.log("here");
-            console.log("in blur...9");
             $("#errorSpaceCC").hide();
             $("#checkBoxCC").show();
             $(this).removeClass("negativeBox");
             $(this).addClass("positiveBox");
-            $("#checkBoxCC").text("Ok");
+            $("#checkBoxCC").text("OK!");
             $("#checkBoxCC").removeClass("negativeCheck");
             $("#checkBoxCC").addClass("positiveCheck");
           }
@@ -358,10 +330,7 @@ console.log("in blur...");
 
       }
 
-
       else if(str.length==0){//empty
-        console.log("here1");
-        console.log("in blur...8");
         $("#checkBoxCC").hide();
         $("#errorSpaceCC").show();
         $(this).removeClass("negativeBox");
@@ -371,13 +340,11 @@ console.log("in blur...");
       }
 
       else{//ok
-        console.log("here");
-        console.log("in blur...9");
         $("#errorSpaceCC").hide();
         $("#checkBoxCC").show();
         $(this).removeClass("negativeBox");
         $(this).addClass("positiveBox");
-        $("#checkBoxCC").text("Ok");
+        $("#checkBoxCC").text("OK!");
         $("#checkBoxCC").removeClass("negativeCheck");
         $("#checkBoxCC").addClass("positiveCheck");
       }
@@ -409,7 +376,7 @@ console.log("in blur...");
         $("#checkBoxCVC").show();
         $(this).removeClass("positiveBox");
         $(this).addClass("negativeBox");
-        $("#checkBoxCVC").text("Not Valid");
+        $("#checkBoxCVC").text("Not Valid.");
         $("#checkBoxCVC").removeClass("positiveCheck");
         $("#checkBoxCVC").addClass("negativeCheck");
       }
@@ -429,12 +396,11 @@ console.log("in blur...");
         $("#checkBoxCVC").show();
         $(this).removeClass("negativeBox");
         $(this).addClass("positiveBox");
-        $("#checkBoxCVC").text("Ok");
+        $("#checkBoxCVC").text("OK!");
         $("#checkBoxCVC").removeClass("negativeCheck");
         $("#checkBoxCVC").addClass("positiveCheck");
       }
    }); 
-
 
 
 //Date Validation   $('#credit_card_year').click(function() {
@@ -468,14 +434,21 @@ function dateCheck() {
       $("#checkBoxDate").text("Your card has expired or you have chosen a wrong expiration date.");
       $("#checkBoxDate").removeClass("positiveCheck");
       $("#checkBoxDate").addClass("negativeCheck");
+      $("#credit_card_year").blur();
+      $("#credit_card_month").blur();
         //red
     }  
     else if(selM=="--"){
       $("#errorDateEmpty").show();
-      $("#errorDateEmpty").text("Please select a month");
+      //$("#errorDateEmpty").text("Please select a month");
+      $("#errorDateEmpty").text("");
       $("#errorDate").hide();
       $("#credit_card_month").removeClass("positiveBox");
       $("#credit_card_month").removeClass("negativeBox");
+      $("#credit_card_year").removeClass("positiveBox");
+      $("#credit_card_year").removeClass("negativeBox");
+      $("#credit_card_year").blur();
+      $("#credit_card_month").blur();
       //please select a month
     }
     else{
@@ -486,26 +459,38 @@ function dateCheck() {
       $("#checkBoxDate").removeClass("negativeCheck");
       $("#credit_card_year").removeClass("negativeBox");
       $("#credit_card_month").removeClass("negativeBox");
-      $("#credit_card_year").removeClass("positiveBox");
-      $("#credit_card_month").removeClass("positiveBox");
+      $("#credit_card_year").addClass("positiveBox");
+      $("#credit_card_month").addClass("positiveBox");
+      $("#credit_card_year").blur();
+      $("#credit_card_month").blur();
 //green
     }
   }
   else if(selY=="--"){
       $("#errorDateEmpty").show();
-      $("#errorDateEmpty").text("Please select a year");
+      //$("#errorDateEmpty").text("Please select a year");
+      $("#errorDateEmpty").text("");
       $("#errorDate").hide();
       $("#credit_card_year").removeClass("positiveBox");
       $("#credit_card_year").removeClass("negativeBox");
+      $("#credit_card_month").removeClass("positiveBox");
+      $("#credit_card_month").removeClass("negativeBox");
+      $("#credit_card_year").blur();
+      $("#credit_card_month").blur();
       //please select a year
   }
   else{
     if(selM=="--"){
       $("#errorDateEmpty").show();
-      $("#errorDateEmpty").text("Please select a month");
+      //$("#errorDateEmpty").text("Please select a month");
+      $("#errorDateEmpty").text("");
       $("#errorDate").hide();
       $("#credit_card_month").removeClass("positiveBox");
       $("#credit_card_month").removeClass("negativeBox");
+      $("#credit_card_year").removeClass("positiveBox");
+      $("#credit_card_year").removeClass("negativeBox");
+      $("#credit_card_year").blur();
+      $("#credit_card_month").blur();
           //please select a month
     }
     else{
@@ -518,6 +503,8 @@ function dateCheck() {
       $("#credit_card_month").removeClass("negativeBox");
       $("#credit_card_year").addClass("positiveBox");
       $("#credit_card_month").addClass("positiveBox");
+      $("#credit_card_year").blur();
+      $("#credit_card_month").blur();
           //green
     }
   }
