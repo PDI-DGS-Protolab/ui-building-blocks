@@ -408,13 +408,41 @@ $(document).ready(function() {
       dateCheck();
    });  
 
-
     $('#credit_card_month').click(function() {
       dateCheck();
     });
 
+
+  $('input[type="text"]').blur(function(){
+    check();
+  });
+
+  $('select').blur(function(){
+    check();
+  });
+
 });
 
+
+function check(){
+  var name = $('#checkBoxName').text();
+  var lname = $('#checkBoxLName').text();
+  var cvc = $('#checkBoxCVC').text();
+  var cc = $('#checkBoxCC').text();
+  var date = $('#checkBoxDate').text();
+
+  if((name=='OK!')&&($('#errorSpaceLNameX').is(":visible"))
+    &&(lname=='OK!')&&($('#errorSpaceNameX').is(":visible"))
+    &&(cc=='OK!')&&($('#checkBoxCVC').is(":visible"))
+    &&(cvc=='OK!')&&($('#checkBoxCC').is(":visible"))
+    &&(date=='OK!')&&($('#errorDate').is(":visible"))
+    ){
+    $(":submit").removeAttr("disabled");
+  }
+  else{
+    $(":submit").attr('disabled','disabled');
+  }
+}
 
 function dateCheck() {
   var d=new Date();
