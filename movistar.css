@@ -11,16 +11,35 @@
     border-color: #5cd2ed;
     border-width: 2px;
 }
+.inputBox:focus,.cardNumberBox:focus,.securityCodeBox:focus{
+    margin:-1px;
+}
 
 .negativeBox{
     border-color: #c60606;
     border-width:2px;
+    margin:-1px;
 }
 
 .positiveBox{
     border-color: #7ab800;
     border-width:2px;
+    margin:-1px;
 }
+
+.negativeBoxDD{
+    border-color: #c60606;
+    border-width:2px;
+
+}
+
+.positiveBoxDD{
+    border-color: #7ab800;
+    border-width:2px;
+
+}
+
+
 
 .negativeCheck,.positiveCheck{
     color:white;

@@ -411,11 +411,11 @@ $(document).ready(function() {
 
 
 //Date Validation   $('#credit_card_year').click(function() {
-   $('#credit_card_year').click(function() {
+   $('#credit_card_year').change(function() {
       dateCheck();
    });  
 
-    $('#credit_card_month').click(function() {
+    $('#credit_card_month').change(function() {
       dateCheck();
     });
 
@@ -442,7 +442,7 @@ function check(){
     &&(lname=='OK!')&&($('#errorSpaceNameX').is(":visible"))
     &&(cc=='OK!')&&($('#checkBoxCVC').is(":visible"))
     &&(cvc=='OK!')&&($('#checkBoxCC').is(":visible"))
-    &&(date=='OK!')&&($('#errorDate').is(":visible"))
+    &&(date=='OK!')
     ){
     $(":submit").removeAttr("disabled");
   }
@@ -462,10 +462,10 @@ function dateCheck() {
     if(selM<m){
       $("#errorDateEmpty").hide();
       $("#errorDate").show();
-      $("#credit_card_year").removeClass("positiveBox");
-      $("#credit_card_month").removeClass("positiveBox");
-      $("#credit_card_year").addClass("negativeBox");
-      $("#credit_card_month").addClass("negativeBox");
+      $("#credit_card_year").removeClass("positiveBoxDD");
+      $("#credit_card_month").removeClass("positiveBoxDD");
+      $("#credit_card_year").addClass("negativeBoxDD");
+      $("#credit_card_month").addClass("negativeBoxDD");
       $("#checkBoxDate").text("Your card has expired or you have chosen a wrong expiration date.");
       //$("#checkBoxDate").removeClass("positiveCheck");
       $("#checkBoxDate").addClass("negativeCheck");
@@ -475,13 +475,14 @@ function dateCheck() {
     }  
     else if(selM=="--"){
       $("#errorDateEmpty").show();
-      $("#errorDateEmpty").text("Please select a month");
+      //$("#errorDateEmpty").text("Please select a month");
       $("#errorDateEmpty").text("");
+      $("#checkBoxDate").text("");
       $("#errorDate").hide();
-      $("#credit_card_month").removeClass("positiveBox");
-      $("#credit_card_month").removeClass("negativeBox");
-      $("#credit_card_year").removeClass("positiveBox");
-      $("#credit_card_year").removeClass("negativeBox");
+      $("#credit_card_month").removeClass("positiveBoxDD");
+      $("#credit_card_month").removeClass("negativeBoxDD");
+      $("#credit_card_year").removeClass("positiveBoxDD");
+      $("#credit_card_year").removeClass("negativeBoxDD");
       $("#credit_card_year").blur();
       $("#credit_card_month").blur();
       //please select a month
@@ -491,13 +492,13 @@ function dateCheck() {
       $("#errorDate").hide();
       //$("#errorDateEmpty").hide();
       //$("#errorDate").show();
-      //$("#checkBoxDate").text("OK!");
+      $("#checkBoxDate").text("OK!");
       //$("#checkBoxDate").addClass("positiveCheck");
       //$("#checkBoxDate").removeClass("negativeCheck");
-      $("#credit_card_year").removeClass("negativeBox");
-      $("#credit_card_month").removeClass("negativeBox");
-      $("#credit_card_year").addClass("positiveBox");
-      $("#credit_card_month").addClass("positiveBox");
+      $("#credit_card_year").removeClass("negativeBoxDD");
+      $("#credit_card_month").removeClass("negativeBoxDD");
+      $("#credit_card_year").addClass("positiveBoxDD");
+      $("#credit_card_month").addClass("positiveBoxDD");
       $("#credit_card_year").blur();
       $("#credit_card_month").blur();
 //green
@@ -507,11 +508,12 @@ function dateCheck() {
       $("#errorDateEmpty").show();
       //$("#errorDateEmpty").text("Please select a year");
       $("#errorDateEmpty").text("");
+      $("#checkBoxDate").text("");
       $("#errorDate").hide();
-      $("#credit_card_year").removeClass("positiveBox");
-      $("#credit_card_year").removeClass("negativeBox");
-      $("#credit_card_month").removeClass("positiveBox");
-      $("#credit_card_month").removeClass("negativeBox");
+      $("#credit_card_year").removeClass("positiveBoxDD");
+      $("#credit_card_year").removeClass("negativeBoxDD");
+      $("#credit_card_month").removeClass("positiveBoxDD");
+      $("#credit_card_month").removeClass("negativeBoxDD");
       $("#credit_card_year").blur();
       $("#credit_card_month").blur();
       //please select a year
@@ -521,11 +523,12 @@ function dateCheck() {
       $("#errorDateEmpty").show();
       //$("#errorDateEmpty").text("Please select a month");
       $("#errorDateEmpty").text("");
+      $("#checkBoxDate").text("");
       $("#errorDate").hide();
-      $("#credit_card_month").removeClass("positiveBox");
-      $("#credit_card_month").removeClass("negativeBox");
-      $("#credit_card_year").removeClass("positiveBox");
-      $("#credit_card_year").removeClass("negativeBox");
+      $("#credit_card_month").removeClass("positiveBoxDD");
+      $("#credit_card_month").removeClass("negativeBoxDD");
+      $("#credit_card_year").removeClass("positiveBoxDD");
+      $("#credit_card_year").removeClass("negativeBoxDD");
       $("#credit_card_year").blur();
       $("#credit_card_month").blur();
           //please select a month
@@ -533,15 +536,15 @@ function dateCheck() {
     else{
       //$("#errorDateEmpty").hide();
       //$("#errorDate").show();
-      //$("#checkBoxDate").text("OK!");
+      $("#checkBoxDate").text("OK!");
       //$("#checkBoxDate").addClass("positiveCheck");
       //$("#checkBoxDate").removeClass("negativeCheck");
       $("#errorDateEmpty").show();
       $("#errorDate").hide();
-      $("#credit_card_year").removeClass("negativeBox");
-      $("#credit_card_month").removeClass("negativeBox");
-      $("#credit_card_year").addClass("positiveBox");
-      $("#credit_card_month").addClass("positiveBox");
+      $("#credit_card_year").removeClass("negativeBoxDD");
+      $("#credit_card_month").removeClass("negativeBoxDD");
+      $("#credit_card_year").addClass("positiveBoxDD");
+      $("#credit_card_month").addClass("positiveBoxDD");
       $("#credit_card_year").blur();
       $("#credit_card_month").blur();
           //green
