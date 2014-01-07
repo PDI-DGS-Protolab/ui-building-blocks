@@ -1,3 +1,10 @@
+.externalBox{
+    background-color:#FFF;
+}
+
+.internalBox{
+    background-color:#F2F2F2;
+}
 
 .inputBox:focus,.cardNumberBox:focus,.securityCodeBox:focus,.dateDropDown:focus{
     outline: none !important;
@@ -40,17 +47,18 @@
     color:white;
     cursor:pointer;
 }
-
+/*
 .neutralButton:hover:enabled{
-    background: #127485; /* Old browsers */
-    background: -moz-linear-gradient(top, #127485 0%, #0d6c7c 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#127485), color-stop(100%,#0d6c7c)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #127485 0%,#0d6c7c 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #127485 0%,#0d6c7c 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #127485 0%,#0d6c7c 100%); /* IE10+ */
-    background: linear-gradient(to bottom, #127485 0%,#0d6c7c 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#127485', endColorstr='#0d6c7c',GradientType=0 ); /* IE6-9 */
-}
+    background: #127485; 
+    background: -moz-linear-gradient(top, #127485 0%, #0d6c7c 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#127485), color-stop(100%,#0d6c7c)); 
+    background: -webkit-linear-gradient(top, #127485 0%,#0d6c7c 100%); 
+    background: -o-linear-gradient(top, #127485 0%,#0d6c7c 100%); 
+    background: -ms-linear-gradient(top, #127485 0%,#0d6c7c 100%); 
+    background: linear-gradient(to bottom, #127485 0%,#0d6c7c 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#127485', endColorstr='#0d6c7c',GradientType=0 ); 
+}*/
+
 .neutralButton:active:enabled{
     outline: none !important;
     background: #007487; /* Old browsers */

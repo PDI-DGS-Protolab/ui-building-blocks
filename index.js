@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  var year=new Date().getFullYear()-1;
+  var year=new Date().getFullYear();
   $('#credit_card_year').append($('<option />').val("--").html("--"));
   for (i = 0; i < 10; i++){
     $('#credit_card_year').append($('<option />').val(year+i).html(year+i));
@@ -446,8 +446,8 @@ function check(){
 
 function dateCheck() {
   var d=new Date();
-  var y=d.getFullYear()-1;
-  var m=d.getMonth()+2;
+  var y=d.getFullYear();
+  var m=d.getMonth()+1;
   var selM= $('#credit_card_month').val();
   var selY= $('#credit_card_year').val();
 

@@ -150,6 +150,7 @@
 }
 
 .submitButton{
+    z-index:1;
     border-radius:3px;
     text-align:center;
     border:#999999 1px solid;
@@ -159,6 +160,7 @@
     width:50%;
     background-color:white;
 }
+
 
 .contextName {
     display: none;
@@ -226,10 +228,10 @@
 }
 
 .innactive{
-    -khtml-opacity:.50; 
-    -moz-opacity:.50; 
-    -ms-filter:"alpha(opacity=50)";
-    filter:alpha(opacity=50);
-    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.5);
-    opacity:.50; 
+    -khtml-opacity:.30; 
+    -moz-opacity:.30; 
+    -ms-filter:"alpha(opacity=30)";
+    filter:alpha(opacity=30);
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.3);
+    opacity:.30; 
 }
