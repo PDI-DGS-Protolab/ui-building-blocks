@@ -126,6 +126,7 @@
     background-color: #191919;
     -moz-border-radius: 7px;
     -webkit-border-radius: 7px;
+    border-radius:7px;
     border: 1px solid #000000;
     padding: -2px;
 }
@@ -143,6 +144,7 @@
     background-color: #212121;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
+    border-radius:5px;
     border: 1px solid #000000;
     padding: -2px;
     opacity:0.9;
