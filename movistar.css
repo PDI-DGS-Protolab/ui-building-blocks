@@ -67,7 +67,19 @@
     cursor:pointer;
 }
 
-/*neutral:hover:enabled == neutral changing color with rgba a=0.9*/
+.neutralButton:hover:enabled{
+    border:rgba(26,141,202,0.9) 1px solid;
+    background: rgba(26,141,202,0.9); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(26,141,202,0.9) 0%, rgba(0,134,195,0.9) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(26,141,202,0.9)), color-stop(100%,rgba(0,134,195,0.9))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(26,141,202,0.9) 0%,rgba(0,134,195,0.9) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(26,141,202,0.9) 0%,rgba(0,134,195,0.9) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(26,141,202,0.9) 0%,rgba(0,134,195,0.9) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(26,141,202,0.9) 0%,rgba(0,134,195,0.9) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(26,141,202,0.9)', endColorstr='rgba(0,134,195,0.9)',GradientType=0 ); /* IE6-9 */
+    color:white;
+    cursor:pointer;
+}
 
 .neutralButton:active:enabled{
     outline: none !important;
