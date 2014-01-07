@@ -1,4 +1,11 @@
 $(document).ready(function() {
+  $('.submitButton').mouseover(function(){
+    $('.backSubmit').css('background-color','rgba(72,72,72,1.0)');
+  });
+
+  $('.submitButton').mouseout(function(){
+    $('.backSubmit').css('background-color','rgba(72,72,72,0.0)');
+  });
 
   var year=new Date().getFullYear();
   $('#credit_card_year').append($('<option />').val("--").html("--"));

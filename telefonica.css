@@ -47,7 +47,7 @@
     color:white;
     cursor:pointer;
 }
-
+/*neutral:hover:enabled == neutral changing color with rgba a=0.9*/
 
 
 .neutralButton:active:enabled{
