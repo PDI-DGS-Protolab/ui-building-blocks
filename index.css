@@ -46,7 +46,6 @@
 }
 
 .targetSpace{
-    margin-top:-1px;
     margin-left:12px;
     height:20px;
     float:left;
@@ -116,11 +115,13 @@
 .cardNumberBox{
     width: 72%;
     margin-right:12px;
+    margin-top:6px;
 }
 
 .securityCodeBox{
     width:18%;
     float:right;
+    margin-top:6px;
 }
 
 .helpSecurityCode{
