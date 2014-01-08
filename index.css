@@ -1,7 +1,7 @@
 .externalBox{
 	background-color:#C7C7C7;    
     padding:12px;
-    width:518px;
+    width:568px;
 }
 
 .internalBox{
@@ -14,6 +14,10 @@
 
 .right{
     float:right;
+}
+
+.left{
+    float:left;
 }
 .header{
     font-size:24px;
@@ -41,7 +45,12 @@
     font-size:18px;
 }
 
-
+.targetSpace{
+    margin-top:-1px;
+    margin-left:12px;
+    height:20px;
+    float:left;
+}
 .infoSpace{
     padding:0px 5px 0px 5px;
     line-height:30px;
@@ -53,14 +62,14 @@
 
 .infoLeft{
     height:30px;
-    width:72%;
+    width:75%;
     margin-right:6px;
     float:left;
 }
 
 .infoRight{
     height:30px;
-    width:24%;
+    width:21%;
     float:right;
 }
 
@@ -105,12 +114,12 @@
 }
 
 .cardNumberBox{
-    width: 69%;
+    width: 72%;
     margin-right:12px;
 }
 
 .securityCodeBox{
-    width:21%;
+    width:18%;
     float:right;
 }
 
@@ -201,7 +210,9 @@
     border-radius:5px;
 
 }
-
+.rightMargin{
+    width:100%;
+}
 .ok {
     border:green 3px solid;
 }
@@ -212,17 +223,19 @@
 
 .american,.maestro,.mastercard,.visa{
     float:left;
-    height:30px !important;
-    width:48px !important;
+    height:20px !important;
+    width:32px !important;
     margin-right:12px;
+    background-size: 32px 20px;
 }
 
 .american{
     float:left !important;
-    height:30px !important;
-    width:48px !important;
+    height:20px !important;
+    width:32px !important;
     margin-right:12px !important;
     background-image: url('cards/americanexpress.png');
+    background-size: 32px 20px;
 }
 
 .maestro{
@@ -235,6 +248,8 @@
 
 .visa{
     background-image: url('cards/visa.png');
+
+    margin-right:0px;
 }
 
 .creditCardNotSelected{
@@ -261,8 +276,10 @@
     text-overflow: '';
    }
 
+
 @-moz-document url-prefix() {
     select:focus{
     margin-top: -1px;
     }
 }
+
