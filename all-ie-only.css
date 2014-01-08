@@ -7,7 +7,7 @@ div:before {
 	position: absolute;
 	content: '';
 	left: 324px;
-	top:429px;
+	top:436px;
 	height: 32px;
 	width: 20px;
 	margin: 3px;
@@ -20,7 +20,7 @@ div:after {
 	position: absolute;
 	content: '';
 	left: 165px;
-	top:429px;
+	top:436px;
 	height: 32px;
 	width: 20px;
 	margin: 3px;
