@@ -255,8 +255,14 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    padding: 1px 29px 1px 1px;
+    padding: 2px 20px 2px 2px;
     background: transparent url("br_down.png") no-repeat right center;
     text-indent: 0.01px;
     text-overflow: '';
    }
+
+@-moz-document url-prefix() {
+    select:focus{
+    margin-top: -1px;
+    }
+}
