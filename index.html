@@ -2,6 +2,9 @@
 
 <html>
     <head>
+        <!--[if IE]>
+        <link rel="stylesheet" type="text/css" href="all-ie-only.css" />
+        <![endif]-->
         <LINK href="index.css" rel="stylesheet" type="text/css"/>
         <LINK href="movistar.css" rel="stylesheet" type="text/css"/>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
@@ -99,19 +102,13 @@
 
  <label for="credit_card_month" class="textLabel">Expiration Date</label>
             <div class="space025X"></div>
+            
+        <div class="styled-select">
             <select  id="credit_card_month" name="credit_card[month]" class="dateDropDown"  />
-
             </select> 
-
             <select id="credit_card_year" name="credit_card[year]" class="dateDropDown">
             </select>
-
-            <!-- <div id= "expirationSpace" class="space175X"></div>
-
-            
-            <div id="errorDateEmpty" class="contextName">
-
-            </div> -->
+        </div>    
 
             <div id="errorDateEmpty" class="infoSpace">
 
