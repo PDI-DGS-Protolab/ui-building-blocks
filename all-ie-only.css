@@ -1,0 +1,30 @@
+div select {
+    z-index:1;
+}
+
+div:before {
+    display: block;
+	position: absolute;
+	content: '';
+	left: 285px;
+	top:471px;
+	height: 32px;
+	width: 20px;
+	margin: 3px;
+	background: white;
+	z-index: 5;
+}
+
+div:after {
+    display: block;
+	position: absolute;
+	content: '';
+	left: 140px;
+	top:471px;
+	height: 32px;
+	width: 20px;
+	margin: 3px;
+	background: white;
+	z-index: 5;
+}
+
