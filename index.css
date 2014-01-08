@@ -80,6 +80,9 @@
     font-size:18px;
     font-weight: bold;
 }
+.clearing{
+    clear:both;
+}
 
 .checkBox,.checkBoxCC,.checkBoxCVC{
     margin-top:3.75px;
@@ -115,14 +118,14 @@
 .cardNumberBox{
     width: 72%;
     margin-right:12px;
-    margin-top:6px;
 }
 
 .securityCodeBox{
     width:18%;
     float:right;
-    margin-top:6px;
 }
+
+
 
 .helpSecurityCode{
     float:right;
