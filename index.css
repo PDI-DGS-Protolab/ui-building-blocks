@@ -62,7 +62,7 @@
 
 .infoLeft{
     height:30px;
-    width:76.43%;
+    width:76%;
     margin-right:6px;
     float:left;
 }
@@ -100,6 +100,7 @@
 }
 .checkBox{
     padding-right:12px;
+    width:97.5%
 }
 
 .checkBoxCC,.checkBoxCVC{
@@ -125,7 +126,7 @@
 }
 
 .cardNumberBox{
-    width: 73.43%;
+    width: 73%;
     margin-right:12px;
 }
 

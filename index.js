@@ -173,7 +173,7 @@ $(document).ready(function() {
 
       else if((str=='')||(str==undefined)){
         $("#errorSpaceLName").show();
-        $("#checkBoxName").text("");
+        $("#checkBoxLName").text("");
         //$(this).removeClass("positiveBox");
         $(this).removeClass("negativeBox");
       }
