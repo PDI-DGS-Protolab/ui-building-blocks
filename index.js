@@ -118,7 +118,7 @@ $(document).ready(function() {
 
       var str = $('#credit_card_first_name').val();
 
-      if(/^[a-zA-Z]*$/.test(str) == false) {
+      if(/^[a-zA-Z\u00e1\u00e9\u00ed\u00f3\u00fa\u00c1\u00c9\u00cd\u00d3\u00da\u00f1\u00d1 ]*$/.test(str) == false) {
         $("#errorSpaceName").hide();
         $("#errorSpaceNameX").show();
         //$(this).removeClass("positiveBox");
@@ -161,7 +161,7 @@ $(document).ready(function() {
 
       var str = $('#credit_card_last_name').val();
 
-      if(/^[a-zA-Z]*$/.test(str) == false) {
+      if(/^[a-zA-Z\u00e1\u00e9\u00ed\u00f3\u00fa\u00c1\u00c9\u00cd\u00d3\u00da\u00f1\u00d1 ]*$/.test(str) == false) {
         $("#errorSpaceLName").hide();
         $("#errorSpaceLNameX").show();
         //$(this).removeClass("positiveBox");
