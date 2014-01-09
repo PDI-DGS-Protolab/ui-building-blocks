@@ -344,7 +344,7 @@ $(document).ready(function() {
       else if(str.length==0){//empty
         $("#checkBoxCC").hide();
         $("#errorSpaceCC").show();
-        $("#checkBoxName").text("");
+        $("#checkBoxCC").text("");
         $(this).removeClass("negativeBox");
         //$(this).removeClass("positiveBox");
         $("#checkBoxCC").removeClass("negativeCheck");
@@ -393,7 +393,7 @@ $(document).ready(function() {
       else if(str.length==0){//empty
         $("#checkBoxCVC").hide();
         $("#errorSpaceCVC").show();
-        $("#checkBoxName").text("");
+        $("#checkBoxCVC").text("");
         $(this).removeClass("negativeBox");
         //$(this).removeClass("positiveBox");
         $("#checkBoxCVC").removeClass("negativeCheck");
