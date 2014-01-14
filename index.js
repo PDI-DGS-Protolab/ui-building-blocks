@@ -18,14 +18,13 @@ $(document).ready(function() {
   availableYear.push(yearTwoDigits);
   var nextYear;
   var nextYearString;
-  for (var i=0;i<25;i++)
+  for (var i=0;i<15;i++)
   { 
     nextYear=year+i+1;
     nextYearString=nextYear.toString();
     availableYear.push(nextYearString[2]+nextYearString[3]);
   }
   
-  console.log(availableYear);
   $("#credit_card_month_value").attr("placeholder", (month+1).toString());
   $("#credit_card_year_value").attr("placeholder", yearTwoDigits);
 
@@ -340,7 +339,7 @@ $(document).ready(function() {
 //CVC Context + Validation
    $('#credit_card_verification_value').click(function() {
       $("#errorSpaceCVC").show();
-      $("#errorSpaceCVC").text("3 digit #");
+      $("#errorSpaceCVC").text("3 digit number");
       $("#checkBoxCVC").hide();
    });  
 
@@ -352,7 +351,7 @@ $(document).ready(function() {
       var str = $('#credit_card_verification_value').val();
 
 
-      if((/^[0-9]*$/.test(str) == false)|| ((str.length!=0)&&(str.length!=3))) { //characters
+      if((/^[0-9]*$/.test(str) == false)) { //characters
         $("#errorSpaceCVC").hide();
         $("#checkBoxCVC").show();
         //$(this).removeClass("positiveBox");
@@ -371,6 +370,15 @@ $(document).ready(function() {
         //$(this).removeClass("positiveBox");
         $("#checkBoxCVC").removeClass("negativeCheck");
         //$("#checkBoxCVC").removeClass("positiveCheck");
+      }
+      else if(str.length<3){//<3
+        $("#errorSpaceCVC").hide();
+        $("#checkBoxCVC").show();
+        //$(this).removeClass("positiveBox");
+        $(this).addClass("negativeBox");
+        $("#checkBoxCVC").text("Incomplete.");
+        //$("#checkBoxCVC").removeClass("positiveCheck");
+        $("#checkBoxCVC").addClass("negativeCheck");
       }
 
       else{//ok
@@ -400,17 +408,16 @@ $(document).ready(function() {
   });
 
   $('#credit_card_year_value').blur(function() {var date= new Date();
-    var date= new Date();
-    var year= date.getFullYear();
-    year=year.toString();
-    var yearTwoDigits=year[2]+year[3];
-    $("#credit_card_year_value").attr("placeholder", yearTwoDigits);
+  
+    $("#credit_card_year_value").attr("placeholder", availableYear[0]);
   });
 
   
-  console.log(availableYear);
   $("#credit_card_month_value").autocomplete({
       source: availableMonth
+    });
+  $("#credit_card_year_value").autocomplete({
+      source: availableYear
     });
 //Date Validation
     $('#credit_card_year').change(function() {

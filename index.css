@@ -13,6 +13,13 @@
     
 }
 
+.dateBox::-webkit-input-placeholder{
+  font-style:italic;
+}
+.dateBox:-moz-placeholder{
+  font-style:italic;
+}
+
 .right{
     float:right;
 }
