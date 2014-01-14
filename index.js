@@ -6,19 +6,30 @@ $(document).ready(function() {
   $('.submitButton').mouseout(function(){
     $('.backSubmit').css('background-color','rgba(72,72,72,0.0)');
   });
-
-  var year=new Date().getFullYear();
-  $('#credit_card_year').append($('<option />').val("--").html("--"));
-  for (i = 0; i < 10; i++){
-    $('#credit_card_year').append($('<option />').val(year+i).html(year+i));
+  var date= new Date();
+  var month= date.getMonth();
+  var availableMonth = [
+      "01","02","03","04","05","06","07","08","09","10","11","12"
+  ];
+  var year= date.getFullYear();
+  var yearString=year.toString();
+  var yearTwoDigits=yearString[2]+yearString[3];
+  var availableYear = new Array();
+  availableYear.push(yearTwoDigits);
+  var nextYear;
+  var nextYearString;
+  for (var i=0;i<25;i++)
+  { 
+    nextYear=year+i+1;
+    nextYearString=nextYear.toString();
+    availableYear.push(nextYearString[2]+nextYearString[3]);
   }
+  
+  console.log(availableYear);
+  $("#credit_card_month_value").attr("placeholder", (month+1).toString());
+  $("#credit_card_year_value").attr("placeholder", yearTwoDigits);
 
-  $('#credit_card_month').append($('<option />').val("--").html("--"));
-  for (i =1 ; i < 13; i++){
-    $('#credit_card_month').append($('<option />').val(i).html(i));
-  }
-
-
+  
    $('.submitButton').click(function() {
        //check first name
        //check last name
@@ -43,30 +54,31 @@ $(document).ready(function() {
 
     if(str.substr(0,1)=='4'){
         //visa
-        $(".american").addClass("innactive");
-        $(".maestro").addClass("innactive");
-        $(".mastercard").addClass("innactive");
-        $(".visa").removeClass("innactive");
+        $(".cardNumberBox").removeClass("american");
+        $(".cardNumberBox").removeClass("mastercard");
+        $(".cardNumberBox").removeClass("maestro");
+        $(".cardNumberBox").addClass("visa");
+        
         $('#credit_card_number').attr('maxlength', 16);
     }
 
     else if(str.substr(0,2)=='51'
           ||str.substr(0,2)=='52'){
       //master card
-        $(".american").addClass("innactive");
-        $(".maestro").addClass("innactive");
-        $(".mastercard").removeClass("innactive");
-        $(".visa").addClass("innactive");
+        $(".cardNumberBox").removeClass("american");
+        $(".cardNumberBox").removeClass("visa");
+        $(".cardNumberBox").removeClass("maestro");
+        $(".cardNumberBox").addClass("mastercard");
         $('#credit_card_number').attr('maxlength', 16);
     }
 
     else if(str.substr(0,2)=='34'
           ||str.substr(0,2)=='37'){
       //american express
-        $(".american").removeClass("innactive");
-        $(".maestro").addClass("innactive");
-        $(".mastercard").addClass("innactive");
-        $(".visa").addClass("innactive");
+        $(".cardNumberBox").removeClass("visa");
+        $(".cardNumberBox").removeClass("mastercard");
+        $(".cardNumberBox").removeClass("maestro");
+        $(".cardNumberBox").addClass("american");
         $('#credit_card_number').attr('maxlength', 15);
     }
 
@@ -82,19 +94,19 @@ $(document).ready(function() {
           ||str.substr(0,4)=='0604'
           ||str.substr(0,4)=='6390'){
       //maestro
-        $(".american").addClass("innactive");
-        $(".maestro").removeClass("innactive");
-        $(".mastercard").addClass("innactive");
-        $(".visa").addClass("innactive");
+        $(".cardNumberBox").removeClass("american");
+        $(".cardNumberBox").removeClass("mastercard");
+        $(".cardNumberBox").removeClass("visa");
+        $(".cardNumberBox").addClass("maestro");
         $('#credit_card_number').attr('maxlength', 19);
     }
 
     else{
       //card not supported
-        $(".american").addClass("innactive");
-        $(".maestro").addClass("innactive");
-        $(".mastercard").addClass("innactive");
-        $(".visa").addClass("innactive");
+        $(".cardNumberBox").removeClass("american");
+        $(".cardNumberBox").removeClass("mastercard");
+        $(".cardNumberBox").removeClass("maestro");
+        $(".cardNumberBox").removeClass("visa");
 
         if(str.length==4){
             $('#credit_card_number').attr('maxlength', 4);
@@ -105,25 +117,25 @@ $(document).ready(function() {
 
 
 //First Name Context + Validation
-   $('#credit_card_first_name').click(function() {
+   $('#credit_card_full_name').click(function() {
       $("#errorSpaceName").show();
-      $("#errorSpaceName").text("Enter your name as it appears on your card");
+      $("#errorSpaceName").text("Enter your full name as it appears on your card");
       $("#errorSpaceNameX").hide();
    }); 
 
-   $('#credit_card_first_name').blur(function() {
+   $('#credit_card_full_name').blur(function() {
 
       $("#errorSpaceName").text("");
       $("#errorSpaceNameX").hide();
 
-      var str = $('#credit_card_first_name').val();
+      var str = $('#credit_card_full_name').val();
 
       if(/^[a-zA-Z\u00e1\u00e9\u00ed\u00f3\u00fa\u00c1\u00c9\u00cd\u00d3\u00da\u00f1\u00d1 ]*$/.test(str) == false) {
         $("#errorSpaceName").hide();
         $("#errorSpaceNameX").show();
         //$(this).removeClass("positiveBox");
         $(this).addClass("negativeBox");
-        $("#checkBoxName").text("Illegal characters. You can input lonly letters.");
+        $("#checkBoxName").text("Illegal characters. You can input only letters.");
         $("#checkBoxName").removeClass("positiveCheck");
         $("#checkBoxName").addClass("negativeCheck");
       }
@@ -148,46 +160,6 @@ $(document).ready(function() {
    }); 
 
 //Last Name Context + Validation
-   $('#credit_card_last_name').click(function() {
-      $("#errorSpaceLName").show();
-      $("#errorSpaceLName").text("Enter your last name as it appears on your card");
-      $("#errorSpaceLNameX").hide();
-   }); 
-
-   $('#credit_card_last_name').blur(function() {
-      
-      $("#errorSpaceLName").text("");
-      $("#errorSpaceLNameX").hide();
-
-      var str = $('#credit_card_last_name').val();
-
-      if(/^[a-zA-Z\u00e1\u00e9\u00ed\u00f3\u00fa\u00c1\u00c9\u00cd\u00d3\u00da\u00f1\u00d1 ]*$/.test(str) == false) {
-        $("#errorSpaceLName").hide();
-        $("#errorSpaceLNameX").show();
-        //$(this).removeClass("positiveBox");
-        $(this).addClass("negativeBox");
-        $("#checkBoxLName").text("Illegal characters. You can input only letters.");
-        //$("#checkBoxLName").removeClass("positiveCheck");
-        $("#checkBoxLName").addClass("negativeCheck");
-      }
-
-      else if((str=='')||(str==undefined)){
-        $("#errorSpaceLName").show();
-        $("#checkBoxLName").text("");
-        //$(this).removeClass("positiveBox");
-        $(this).removeClass("negativeBox");
-      }
-
-      else{
-        //$("#errorSpaceLName").hide();
-        //$("#errorSpaceLNameX").show();
-        $(this).removeClass("negativeBox");
-        //$(this).addClass("positiveBox");
-        $("#checkBoxLName").text("OK!");
-        $("#checkBoxLName").removeClass("negativeCheck");
-        //$("#checkBoxLName").addClass("positiveCheck");
-      }
-   }); 
 
 //Credit Card Context + Validation
    $('#credit_card_number').click(function() {
@@ -195,6 +167,7 @@ $(document).ready(function() {
       $("#errorSpaceCC").text("Enter your credit card number without any spaces");
       $("#checkBoxCC").hide();
    }); 
+   
 
    $('#credit_card_number').blur(function() {
       $("#errorSpaceCC").text("");
@@ -412,6 +385,33 @@ $(document).ready(function() {
    }); 
 
 
+  $('#credit_card_month_value').focus(function() {
+    $("#credit_card_month_value").attr("placeholder", "");
+  
+  });
+  $('#credit_card_year_value').focus(function() {
+    $("#credit_card_year_value").attr("placeholder", "");
+  });
+
+  $('#credit_card_month_value').blur(function() {
+    var date= new Date();
+    var month= date.getMonth();
+    $("#credit_card_month_value").attr("placeholder", (month+1).toString());
+  });
+
+  $('#credit_card_year_value').blur(function() {var date= new Date();
+    var date= new Date();
+    var year= date.getFullYear();
+    year=year.toString();
+    var yearTwoDigits=year[2]+year[3];
+    $("#credit_card_year_value").attr("placeholder", yearTwoDigits);
+  });
+
+  
+  console.log(availableYear);
+  $("#credit_card_month_value").autocomplete({
+      source: availableMonth
+    });
 //Date Validation
     $('#credit_card_year').change(function() {
       dateCheck();
@@ -426,7 +426,7 @@ $(document).ready(function() {
       check();
     });
 
-    $('select').blur(function(){
+    $('input[type="text"]').blur(function(){
       check();
     });
 
@@ -435,13 +435,11 @@ $(document).ready(function() {
 
 function check(){
   var name = $('#checkBoxName').text();
-  var lname = $('#checkBoxLName').text();
   var cvc = $('#checkBoxCVC').text();
   var cc = $('#checkBoxCC').text();
   var date = $('#checkBoxDate').text();
 
   if((name=='OK!')
-    &&(lname=='OK!')
     &&(cc=='OK!')
     &&(cvc=='OK!')
     &&(date=='OK!')

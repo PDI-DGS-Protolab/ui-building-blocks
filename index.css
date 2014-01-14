@@ -46,9 +46,18 @@
     font-size:18px;
 }
 
+
 .targetSpace{
-    margin-left:12px;
+    
     height:20px;
+    float:right;
+}
+.targetLeftSpace{
+    z-index: 99999999;
+    width: 73%;
+    position:relative;
+    margin-top:-30px;
+    background-color:blue;
     float:left;
 }
 .infoSpace{
@@ -107,27 +116,53 @@
     display:none;
 }
 
-.inputBox,.cardNumberBox,.securityCodeBox,.dateDropDown{
+.inputBox,.cardNumberBox,.securityCodeBox,.dateBox{
     height:36px;
     border:#999999 1px solid;
     border-radius:5px;
     font-size:18px;
     padding:0px 5px 0px 5px;
     width:100%;
-
+    
 }
 
 .inputBox{
     width:97.5%;
 }
 
-.dateDropDown{
-    margin-right:150px;
+.dateBox{
+    width:35px;
+    text-align:center;
 }
 
 .cardNumberBox{
     width: 73%;
     margin-right:12px;
+    
+
+}
+
+.american{
+    background: transparent url('cards/americanexpress.png');
+    
+}
+
+.maestro{
+    background: transparent url('cards/maestro.png');
+}
+
+.mastercard{
+    background: transparent url('cards/mastercard.png');
+}
+
+.visa{
+    background: transparent url('cards/visa.png');
+}
+
+.american,.mastercard,.maestro,.visa{
+    background-position: 98% 50%; 
+    background-size:40px 25px;
+    background-repeat:no-repeat;
 }
 
 .securityCodeBox{
@@ -238,50 +273,13 @@
     display: none;
 }​
 
-.american,.maestro,.mastercard,.visa{
-    float:left;
-    height:20px !important;
-    width:32px !important;
-    margin-right:12px;
-    background-size: 32px 20px;
-}
 
-.american{
-    float:left !important;
-    height:20px !important;
-    width:32px !important;
-    margin-right:12px !important;
-    background-image: url('cards/americanexpress.png');
-    background-size: 32px 20px;
-}
-
-.maestro{
-    background-image: url('cards/maestro.png');
-}
-
-.mastercard{
-    background-image: url('cards/mastercard.png');
-}
-
-.visa{
-    background-image: url('cards/visa.png');
-
-    margin-right:0px;
-}
 
 .creditCardNotSelected{
     float:left;
     background-color: #ffffff;
 }
 
-.innactive{
-    -khtml-opacity:.30; 
-    -moz-opacity:.30; 
-    -ms-filter:"alpha(opacity=30)";
-    filter:alpha(opacity=30);
-    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.3);
-    opacity:.30; 
-}
 
 .styled-select select {
     -webkit-appearance: none;

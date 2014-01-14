@@ -6,13 +6,16 @@
     background-color:#F2F2F2;
 }
 
-.inputBox:focus,.cardNumberBox:focus,.securityCodeBox:focus,.dateDropDown:focus{
+.inputBox:focus,.cardNumberBox:focus,.securityCodeBox:focus,.dateBox:focus{
     outline: none !important;
     border-color: #00c6d7;
     border-width: 2px;
 }
-.inputBox:focus,.cardNumberBox:focus,.securityCodeBox:focus{
+.inputBox:focus,.cardNumberBox:focus,.securityCodeBox:focus,.dateBox:focus{
     margin:-1px;
+}
+.dateBox:focus{
+    width:38px;
 }
 
 .negativeBox{
