@@ -13,6 +13,13 @@
     
 }
 
+.dateBox::-webkit-input-placeholder{
+  font-style:italic;
+}
+.dateBox:-moz-placeholder{
+  font-style:italic;
+}
+
 .right{
     float:right;
 }
@@ -20,6 +27,19 @@
 .left{
     float:left;
 }
+
+.CCLabel{
+    float:left;
+    width:76%;
+    margin-right:10px;
+}
+
+.CVCLabel{
+    width:20.5%;
+    text-align:left;
+    float:right;
+}
+
 .header{
     font-size:24px;
     font-weight:bold;
