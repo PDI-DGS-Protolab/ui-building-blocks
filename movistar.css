@@ -96,10 +96,10 @@
 
 .neutralButton[disabled=disabled], .neutralButton:disabled {
     cursor:inherit;
-    -khtml-opacity:.40; 
-    -moz-opacity:.40; 
-    -ms-filter:"alpha(opacity=40)";
-    filter:alpha(opacity=40);
-    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.4);
-    opacity:.40; 
+    -khtml-opacity:.20; 
+    -moz-opacity:.20; 
+    -ms-filter:"alpha(opacity=20)";
+    filter:alpha(opacity=20);
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.2);
+    opacity:.20; 
 }
