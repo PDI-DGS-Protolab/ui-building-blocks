@@ -31,12 +31,14 @@
 .negativeBoxDD{
     border-color: #c60606 !important;
     border-width:2px !important;
+    margin:-1px;
 
 }
 
 .positiveBoxDD{
     border-color: #7ab800;
     border-width:2px;
+    margin:-1px;
 
 }
 
