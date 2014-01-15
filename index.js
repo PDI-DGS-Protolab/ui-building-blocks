@@ -22,10 +22,10 @@ $(document).ready(function() {
 
   var availableYear = new Array();
   availableYear.push(year);
-  var nextYear,nextYearString;
+  var nextYear;
 
-  for (var i=0;i<15;i++){ 
-    nextYear=year+i+1;
+  for (var i=0;i<30;i++){ 
+    nextYear=date.getFullYear()+i+1;
     availableYear.push(nextYear.toString().substring(2,4));
   }
   
@@ -496,7 +496,11 @@ $(document).ready(function() {
   });
 
   $("#credit_card_year_value").autocomplete({
-    source: availableYear
+    //source: availableYear
+    source: function(request, response) {
+        var results = $.ui.autocomplete.filter(availableYear, request.term);
+        response(results.slice(0, 7));
+    }
   });
 
  /*--------------------------END:DATE FIELDS FORMATING------------------------*/
