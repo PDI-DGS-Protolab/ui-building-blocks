@@ -24,11 +24,9 @@ $(document).ready(function() {
   availableYear.push(year);
   var nextYear,nextYearString;
 
-  for (var i=0;i<10;i++){ 
+  for (var i=0;i<15;i++){ 
     nextYear=year+i+1;
-    //nextYearString=nextYear.toString();
     availableYear.push(nextYear.toString().substring(2,4));
-    //availableYear.push(nextYearString[2]+nextYearString[3]);
   }
   
   $("#credit_card_month_value").attr("placeholder", (month+1).toString());
@@ -105,8 +103,8 @@ $(document).ready(function() {
 
   //Credit Card Context
   $('#credit_card_number').focus(function() {
-    $("#errorSpaceCC").text("Enter your credit card number without any spaces");
     if(!$("#checkBoxCC").is(':visible')) {
+      $("#errorSpaceCC").text("Enter your credit card number without any spaces");
       $("#errorSpaceCC").show();
       $("#checkBoxCC").hide();
     }
@@ -179,7 +177,6 @@ $(document).ready(function() {
     }
 
     else{
-      console.log("here");
       //card not supported
       $(".cardNumberBox").removeClass("american");
       $(".cardNumberBox").removeClass("mastercard");
@@ -187,7 +184,6 @@ $(document).ready(function() {
       $(".cardNumberBox").removeClass("visa");
 
       if(str.length==4&&/^[0-9]*$/.test(str) == true){
-        //console.log("here1");
         $('#credit_card_number').attr('maxlength', 4);
         $("#errorSpaceCC").hide();
         $("#checkBoxCC").show();
@@ -273,7 +269,7 @@ $(document).ready(function() {
 
 
   $('#credit_card_number').blur(function() {
-    $("#errorSpaceCC").text("");
+
     $("#checkBoxCC").text("");
     var str = $('#credit_card_number').val();
     var errorMsg=$('#checkBoxCC').text();
@@ -646,6 +642,7 @@ function dateCheckOnBlur(){
     if(selM.length==0){
       $("#credit_card_month_value").attr("placeholder", m+1);
     }
+    dateCh=false;
   }
 
   if(selM.length==0){
@@ -653,6 +650,7 @@ function dateCheckOnBlur(){
     if(selY.length==0){
       $("#credit_card_year_value").attr("placeholder", y);
     }
+    dateCh=false;
   }
 
 }
