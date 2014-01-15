@@ -19,7 +19,7 @@
 }
 
 .negativeBox{
-    border-color: #ca3430;
+    border-color: #ca3430 !important;
     border-width:2px;
     margin:-1px;
 }
@@ -32,7 +32,7 @@
 }
 
 .negativeBoxDD{
-    border-color: #ca3430;
+    border-color: #ca3430 !important;
     border-width:2px;
 }
 

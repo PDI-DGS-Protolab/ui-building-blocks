@@ -17,9 +17,9 @@
 
 
 .negativeBox{
-    border-color: #c60606;
-    border-width:2px;
-    margin:-1px;
+    border-color: #c60606 !important;
+    border-width:2px !important;
+    margin:-1px !important;
 }
 
 .positiveBox{
@@ -29,8 +29,8 @@
 }
 
 .negativeBoxDD{
-    border-color: #c60606;
-    border-width:2px;
+    border-color: #c60606 !important;
+    border-width:2px !important;
 
 }
 
