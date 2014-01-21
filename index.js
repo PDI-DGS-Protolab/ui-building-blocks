@@ -539,7 +539,16 @@ function dateCheck() {
   var m=d.getMonth();
   var selM= $('#credit_card_month_value').val().toString();
   var selY= $('#credit_card_year_value').val().toString();
-
+  if(selM>12){
+    $("#errorDateEmpty").hide();
+      $("#errorDate").show();
+      $("#credit_card_year_value").addClass("negativeBox");
+      $("#credit_card_month_value").addClass("negativeBox");
+      $("#checkBoxDate").text("Invalid Month entered.");
+      $("#checkBoxDate").addClass("negativeCheck");
+      $("#credit_card_year_value").focus().val();
+      dateCh=false;
+  }
   if(selY==y){
     if(selM<m){
       //ERROR
