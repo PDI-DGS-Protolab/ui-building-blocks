@@ -18,13 +18,13 @@
     width:38px;
 }
 
-.negativeBoxDD{
+.negativeBox{
     border-color: #db0000 !important;
     border-width:2px;
     margin:-1px;
 }
 
-.positiveBoxDD{
+.positiveBox{
     border-color: #8dc63f;
     border-width:2px;
     margin:-1px;
