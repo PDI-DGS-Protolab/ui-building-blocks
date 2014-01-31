@@ -1,54 +1,31 @@
-.helpSecurityCode{
-    margin-right:-110px !important;
+.help-security-code {
+    margin-right: -110px !important;
 }
 
-.help{
-    overflow:hidden;
-    height:60px !important;
-    margin-top:-70px !important;
-    padding:0px !important;
+.help {
+    position: relative;
     top: 0px !important;
-    z-index: 444;
-    position:relative;
+    height: 60px !important;
+    margin-top: -70px !important;
+    padding: 0px !important;
+    overflow: hidden;   
+    z-index: 444;   
 }
 
-.american{
+.american {
     background-image: url('cards/americanexpressIE8.png') !important;
 }
 
-.maestro{
+.maestro {
     background-image: url('cards/maestroIE8.png') !important;
 }
 
-.mastercard{
+.mastercard {
     background-image: url('cards/mastercardIE8.png') !important;
 }
 
-.visa{
+.visa {
     background-image: url('cards/visaIE8.png') !important;
 }
 
-.innactiveVisa{
-    background-image: url('cards/visaIE8in.png') !important;
-}
-
-.innactiveMaster{
-    background-image: url('cards/mastercardIE8in.png') !important;
-}
-
-.innactiveMaestro{
-    background-image: url('cards/maestroIE8in.png') !important;
-}
-
-.innactiveAmerican{
-    background-image: url('cards/americanexpressIE8in.png') !important;
-}
-
-.innactiveAmerican,.innactiveMaestro,.innactiveMastercard,.innactiveVisa{
-    float:left !important;
-    height:20px !important;
-    width:32px !important;
-    margin-right:12px !important;
-    background-size: 32px 20px !important;
-}
 
