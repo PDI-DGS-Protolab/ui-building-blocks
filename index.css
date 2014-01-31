@@ -1,321 +1,293 @@
-.externalBox{
-	background-color:#C7C7C7;    
-    padding:12px;
-    width:568px;
+.external-box {
+    width: 568px;
+    padding: 12px; 
+    background-color: #C7C7C7;    
 }
 
-.internalBox{
-    font-family:"Arial",sans-serif;
-	background-color:#ADADAD;
-    padding:42px;
-    border-radius:5px;
-    border:#999 1px solid;
-    
+.internal-box {
+    padding: 42px;
+    font-family: "Arial",sans-serif;
+    background-color: #ADADAD;
+    border: #999 1px solid;
+    border-radius: 5px;
 }
 
-.dateBox::-webkit-input-placeholder{
-  font-style:italic;
+.date-box::-webkit-input-placeholder {
+  font-style: italic;
 }
-.dateBox:-moz-placeholder{
-  font-style:italic;
-}
-
-.right{
-    float:right;
+.date-box:-moz-placeholder {
+  font-style: italic;
 }
 
-.left{
-    float:left;
+.right { 
+    float: right;
 }
 
-.CCLabel{
-    float:left;
-    width:76%;
-    margin-right:10px;
+.left {
+    float: left;
 }
 
-.CVCLabel{
-    width:20.5%;
-    text-align:left;
-    float:right;
+.CC-label {
+    width: 76%;
+    margin-right: 10px;
+    float: left;
 }
 
-.header{
-    font-size:24px;
-    font-weight:bold;
+.CVC-label {
+    width: 20.5%;
+    text-align: left;
+    float: right;
 }
 
-.spaceX{
-    height:24px;
-}
-
-.space05X{
-    height:24px;
-}
-
-.space025X{
-    height:6px;
-}
-
-.space175X{
-    height:42px;
-}
-
-.checkSpace,.targetSpace,.infoSpace,.infoSpaceCC,.infoSpaceCVC{
-    height:30px;
-    font-size:18px;
-}
-
-
-.targetSpace{
-    
-    height:20px;
-    float:right;
-}
-.targetLeftSpace{
-    z-index: 99999999;
-    width: 73%;
-    position:relative;
-    margin-top:-30px;
-    background-color:blue;
-    float:left;
-}
-.infoSpace{
-    padding:0px 5px 0px 5px;
-    line-height:30px;
-    font-size:14px;
-    color:#474747;
-    vertical-align:middle;
-}
-
-
-.infoLeft{
-    height:30px;
-    width:76%;
-    margin-right:6px;
-    float:left;
-}
-
-.infoRight{
-    height:30px;
-    width:21%;
-    float:right;
-}
-
-.checkSpace{
-    display:none;
-}
-
-.textLabel{
-    font-size:18px;
+.header {
+    font-size: 24px;
     font-weight: bold;
 }
-.clearing{
-    clear:both;
+
+.spaceX {
+    height: 24px;
 }
 
-.checkBox,.checkBoxCC,.checkBoxCVC{
-    margin-top:3.75px;
-    float:left;
-    height:22.5px;
-    border-radius:5px;
-    line-height:22.5px;
-    vertical-align: middle;
-    background-color:white;
-    font-size:14px;
-    font-weight:bold;
-    text-indent:5px;
-    width:100%;
-}
-.checkBox{
-    padding-right:12px;
-    width:97.5%
+.space05X {
+    height: 24px;
 }
 
-.checkBoxCC,.checkBoxCVC{
-    display:none;
+.space025X {
+    height: 6px;
 }
 
-.inputBox,.cardNumberBox,.securityCodeBox,.dateBox{
-    height:36px;
-    border:#999999 1px solid;
-    border-radius:5px;
-    font-size:18px;
-    padding:0px 5px 0px 5px;
-    width:100%;
-    
+.space175X {
+    height: 42px;
 }
 
-.inputBox{
-    width:97.5%;
+.check-space,.target-space,.info-space,.info-spaceCC,.info-spaceCVC {
+    height: 30px;
+    font-size: 18px;
 }
 
-.dateBox{
-    width:35px;
-    text-align:center;
-}
 
-.cardNumberBox{
+.target-space {
+    height: 20px;
+    float: right;
+}
+.target-left-space {
+    z-index: 99999999;
     width: 73%;
-    margin-right:12px;
+    position: relative;
+    margin-top: -30px;
+    background-color: blue;
+    float: left;
+}
+.info-space {
+    padding: 0px 5px 0px 5px;
+    font-size: 14px;
+    color: #474747;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+
+.info-left {
+    height: 30px;
+    width: 76%;
+    margin-right: 6px;
+    float: left;
+}
+
+.info-right {
+    height: 30px;
+    width: 21%;
+    float: right;
+}
+
+.check-space {
+    display: none;
+}
+
+.text-label {
+    font-size: 18px;
+    font-weight: bold;
+}
+.clearing {
+    clear: both;
+}
+
+.check-box,.check-boxCC,.check-boxCVC {
+    height: 22.5px;
+    width: 100%;
+    margin-top: 3.75px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 5px;
+    float: left;
+    line-height: 22.5px;
+    vertical-align: middle;
+    text-indent: 5px;
+}
+
+.check-box {
+    width: 97.5%;
+    padding-right: 12px;
+}
+
+.check-boxCC,.check-boxCVC {
+    display: none;
+}
+
+.input-box,.card-number-box,.security-code-box,.date-box {
+    height: 36px;
+    width: 100%;
+    padding: 0px 5px 0px 5px;
+    font-size: 18px;
+    border: #999999 1px solid;
+    border-radius: 5px;
+}
+
+.input-box {
+    width: 97.5%;
+}
+
+.date-box {
+    width: 35px;
+    text-align: center;
+}
+
+.card-number-box {
+    width: 73%;
+    margin-right: 12px;
     
 
 }
 
-.american{
+.american {
     background: transparent url('cards/americanexpress.png');
     
 }
 
-.maestro{
+.maestro {
     background: transparent url('cards/maestro.png');
 }
 
-.mastercard{
+.mastercard {
     background: transparent url('cards/mastercard.png');
 }
 
-.visa{
+.visa {
     background: transparent url('cards/visa.png');
 }
 
-.american,.mastercard,.maestro,.visa{
+.american,.mastercard,.maestro,.visa {
     background-position: 98% 50%; 
-    background-size:40px 25px;
-    background-repeat:no-repeat;
+    background-size: 40px 25px;
+    background-repeat: no-repeat;
 }
 
-.securityCodeBox{
-    width:18%;
-    float:right;
+.security-code-box {
+    width: 18%;
+    float: right;
 }
 
 
 
-.helpSecurityCode{
-    float:right;
-    margin-right:-105px;
-    margin-top:-5px;
+.help-security-code {
     height: 14px;
     width: 14px;
-    font-size:14px;
-    text-align:center;
-    color:#ffffff;
+    margin-right: -105px;
+    margin-top: -5px;
+    padding: -2px;
+    color: #FFF;
     background-color: #191919;
+    border: 1px solid #000000;
+    border-radius: 7px;
+    float: right;
+    font-size: 14px;
+    text-align: center;
     -moz-border-radius: 7px;
     -webkit-border-radius: 7px;
-    border-radius:7px;
-    border: 1px solid #000000;
-    padding: -2px;
 }
 
-.help{
-    display: none;
-    float:right;
-    margin-right:-20px;
-    margin-top:-70px;
+.help {
     height: 60px;
     width: 140px;
-    font-size:14px;
-    text-align:center;
-    color:#ffffff;
+    margin-right: -20px;
+    margin-top: -70px;
+    padding: -2px;
+    font-size: 14px;
+    color: #FFF;
     background-color: #212121;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    display: none;
+    float: right;
+    opacity: 0.9;
+    text-align:center;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    border-radius:5px;
-    border: 1px solid #000000;
-    padding: -2px;
-    opacity:0.9;
+    
 }
 
-.dateDropDown{
-    width:30%;
-    margin-right:12px;
+.date-drop-down {
+    width: 30%;
+    margin-right: 12px;
 }
 
-.submitButton{
-    z-index:1;
-    border-radius:5px;
-    text-align:center;
-    border:#999999 1px solid;
-    padding:5px;
-    font-size:18px;
+.submit-button {
+    height: 45px;
+    width: 100%;
+    padding: 5px;
+    font-size: 18px;
     font-weight: bold;
-    width:100%;
-    height:45px;
-    background-color:white;
+    background-color: white;
+    border: #999999 1px solid;
+    border-radius: 5px;
+    text-align:center;
+    z-index: 1;
 }
-.submitButton:hover:enabled{
-    background-color:rgba(0,0,0,0.9);
+.submit-button:hover:enabled {
+    background-color: rgba(0,0,0,0.9);
 }
-.lastSpace{
-    height:5px;
-}
-
-.contextName {
-    display: none;
-    font-size:10px;
-    color:#474747;
-}
-.contextNameR {
-    display: none;
-    font-size:10px;
-    color:#474747;
-    padding:;
+.last-space {
+    height: 5px;
 }
 
-.backSubmit{
-    width:50%;
-    border-radius:5px;
+.context-name {
+    font-size: 10px;
+    color: #474747;
+    display: none;
+}
+.context-name-r {
+    font-size: 10px;
+    color: #474747;
+    display: none;
+}
+
+.back-submit {
+    width: 50%;
     background-color: rgba(72,72,72,0.0);
+    border-radius: 5px;
 }
 
-.errorName {
-    display: none;
-    font-size:10px;
-    color:white;
-    text-align:center;
-    border:#999999 1px solid;
+.error-name {
     padding:0px;
+    font-size:10px;
     font-weight: bold;
+    color:white;
     background-color:red;
+    border:#999999 1px solid;
     border-radius:5px;
-
+    display: none;
+    text-align:center;    
 }
-.rightMargin{
-    width:100%;
+
+.right-margin {
+    width: 100%;
 }
 .ok {
-    border:green 3px solid;
+    border: green 3px solid;
 }
 
 .ui-datepicker-calendar {
     display: none;
 }​
-
-
-
-.creditCardNotSelected{
-    float:left;
-    background-color: #ffffff;
-}
-
-
-.styled-select select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    padding: 2px 20px 2px 2px;
-    background: transparent url("br_down.png") no-repeat center;
-    background-position: 95% 50% ; 
-    text-indent: 0.01px;
-    text-overflow: '';
-   }
-
-
-@-moz-document url-prefix() {
-    select:focus{
-    margin-top: -1px;
-    }
-}
 
